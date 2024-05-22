@@ -90,5 +90,26 @@
         });
     });
 </script>
+
+<script>
+        
+    function filterSelection(category) {
+        var items = document.getElementsByClassName("project-item");
+        if (category == "all") {
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.display = "block";
+            }
+        } else {
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].getAttribute("data-category") == category) {
+                    items[i].style.display = "block";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script> 
+
 </body>
 </html>
