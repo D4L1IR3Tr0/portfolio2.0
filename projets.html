@@ -1,129 +1,166 @@
-<section id="projects" class="projects-section">
-    <div class="container">
-        <h2 class="section-title">Mes Projets</h2>
-        
-        <div class="projects-list">
-            <div class="project-item">
-                <h3 class="project-title">Space revolution</h3>
-                <p class="project-description">Space revolution est un jeu video codé en C++ realisé dans le cadre d'un projet a faire en groupe.
-                    avec mes binomes on avait decidés de faire un jeu video largement inspiré par les jeux des années 90s tel que du shoot'em up 
-                    ou du tower defense en passant par de la course et du tir en vue du dessus.
-                </p>
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h2 class="section-title">Mes Projets</h2>
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="filtre_menu_container">
+                <button class="filter-btn" onclick="filterSelection('all')">Tous</button>
+                <button class="filter-btn" onclick="filterSelection('game')">Jeux Vidéo</button>
+                <button class="filter-btn" onclick="filterSelection('simulation')">Simulation</button>
+                <button class="filter-btn" onclick="filterSelection('software')">Logiciel</button>
+                <button class="filter-btn" onclick="filterSelection('app')">Application Mobile</button>
+                <!-- Add more buttons as needed -->
             </div>
 
-            <div class="project-item">
-                <h3 class="project-title">ESTIMATION PSEUDO ALÉATOIRE DE PI</h3>
-                <p class="project-description">Le but de ce projet est de déterminer la valeur de Pi en utilisant des
-                    nombres pseudo-aléatoires. Pour atteindre cet objectif, nous allons utiliser
-                    l'algorithme de Mersenne Twister, qui est une méthode courante de génération
-                    de nombres pseudo-aléatoires.</p>
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
+            <div class="projects-list">
+                <div class="project-item" data-category="game">
+                    <h3 class="project-title">Space revolution</h3>
+                    <p class="project-description">Space revolution est un jeu video codé en C++ realisé dans le cadre d'un projet a faire en groupe.
+                        avec mes binomes on avait decidés de faire un jeu video largement inspiré par les jeux des années 90s tel que du shoot'em up 
+                        ou du tower defense en passant par de la course et du tir en vue du dessus.
+                    </p>
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="simulation">
+                    <h3 class="project-title">ESTIMATION PSEUDO ALÉATOIRE DE PI</h3>
+                    <p class="project-description">Le but de ce projet est de déterminer la valeur de Pi en utilisant des
+                        nombres pseudo-aléatoires. Pour atteindre cet objectif, nous allons utiliser
+                        l'algorithme de Mersenne Twister, qui est une méthode courante de génération
+                        de nombres pseudo-aléatoires.</p>
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="simulation">
+                    <h3 class="project-title">SIMULATEUR PSEUDO ALÉATOIRE D’UNE POPULATION DE LAPINS</h3>
+                    <p class="project-description">Dans le cadre de ce projet on se propose de faire une simulation sur
+                        plusieurs generations d’une population de lapins.
+                        Nous allons en premier lieu demandé a l’utilisateur d’entrer le nombre de
+                        lapins souhaité ainsi que la durée de la simulation.
+                        Ceci a fin d’afficher par la suite le résultat final des lapins ainsi qu’une
+                        moyenne et la marge d’erreur de notre programme.</p>
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="simulation">
+                    <h3 class="project-title">SIMULATEUR PSEUDO ALÉATOIRE DU JEU DE LA VIE</h3>
+                    <p class="project-description">Ce code est une implémentation du célèbre Game of Life de John Conway.
+                        Le Jeu de la Vie est une simulation basée sur des règles simples permettant de simuler des phénomènes complexes.
+                    </p>
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="game">
+                    <h3 class="project-title">JEU DE PUISSANCE 4 en java</h3>
+                    <p class="project-description">Ce programme en Java vous permet de jouer au célèbre jeu de stratégie où
+                        deux joueurs s'affrontent pour aligner quatre jetons de leur couleur
+                        horizontalement, verticalement ou en diagonale.</p>
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="hardware">
+                    <h3 class="project-title">Distributeur Automatique de nourriture pour chat</h3>
+                    <p class="project-description"></p> <!-- AJOUTER UNE DESCRIPTION -->
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="hardware">
+                    <h3 class="project-title">Véhicule a deux roues motrices</h3>
+                    <p class="project-description">Ce projet consiste a créer un vehicule télécommandé a l’aide d’une carte
+                        programmable Arduino.</p>
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="database">
+                    <h3 class="project-title">Etude de la base de donnée de la société fictive AUVER</h3>
+                    <p class="project-description">Auver est une entreprise basée en Auvergne qui gère plusieurs parcs
+                        informatique et qui aujourd’hui a fait appel a une entreprise extérieure afin de
+                        venir leur installé les dernières versions des logiciels, logiciels qui ont
+                        préalablement étés commandé a une autre entreprise externe spécialiste dans
+                        ce domaine.</p>
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="app">
+                    <h3 class="project-title">Application IOS (transport de Clermont)</h3>
+                    <p class="project-description">Un ami a moi se faisait toujours contrôler par les contrôleurs de la ville de
+                        Clermont Ferrand et m’avais demandé de lui trouver une solution.
+                        Trouvant l’idée amusante je me suis pris au jeu et j’ai donc codé en swiftUI une
+                        application IOS qui génère des ticket de tram reçus par SMS.</p>
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="game">
+                    <h3 class="project-title">TOWN FORGE</h3>
+                    <p class="project-description"></p> <!-- AJOUTER UNE DESCRIPTION -->
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="software">
+                    <h3 class="project-title">RETRO serveur cloud</h3>
+                    <p class="project-description"></p> <!-- AJOUTER UNE DESCRIPTION -->
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="software">
+                    <h3 class="project-title">ZERO SHELL</h3>
+                    <p class="project-description"></p> <!-- AJOUTER UNE DESCRIPTION -->
+                    <div class="project_btn_container">
+                        <button class="project_btn">Voir le projet</button>
+                    </div>
                 </div>
             </div>
-
-            <div class="project-item">
-                <h3 class="project-title">SIMULATEUR PSEUDO ALÉATOIRE D’UNE POPULATION DE LAPINS</h3>
-                <p class="project-description">Dans le cadre de ce projet on se propose de faire une simulation sur
-                    plusieurs generations d’une population de lapins.
-                    Nous allons en premier lieu demandé a l’utilisateur d’entrer le nombre de
-                    lapins souhaité ainsi que la durée de la simulation.
-                    Ceci a fin d’afficher par la suite le résultat final des lapins ainsi qu’une
-                    moyenne et la marge d’erreur de notre programme.</p>
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">SIMULATEUR PSEUDO ALÉATOIRE DU JEU DE LA VIE</h3>
-                <p class="project-description">Ce code est une implémentation du célèbre Game of Life de JohnConway.
-                    Le Jeu de la Vie est une simulation basée sur des règles simples permettant de simuler des phénomènes complexes.
-                </p>
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">JEU DE PUISSANCE 4 en java</h3>
-                <p class="project-description">Ce programme en Java vous permet de jouer au célèbre jeu de stratégie où
-                    deux joueurs s'affrontent pour aligner quatre jetons de leur couleur
-                    horizontalement, verticalement ou en diagonale.</p>
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">Distributeur Automatique de nourriture pour
-                    chat</h3>
-                <p class="project-description"></p> <!-- AJOUTER UNE DESCRIPTION -->
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">Véhicule a deux roues motrices</h3>
-                <p class="project-description">Ce projet consiste a créer un vehicule télécommandé a l’aide d’une carte
-                    programmable Arduino.</p>
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">Etude de la base de donnée de la société fictive AUVER</h3>
-                <p class="project-description">Auver est une entreprise basée en Auvergne qui gère plusieurs parcs
-                    informatique et qui aujourd’hui a fait appel a une entreprise extérieure afin de
-                    venir leur installé les dernières versions des logiciels, logiciels qui ont
-                    préalablement étés commandé a une autre entreprise externe spécialiste dans
-                    ce domaine.</p>
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">Application IOS (transport de Clermont)</h3>
-                <p class="project-description">Un ami a moi se faisait toujours contrôler par les contrôleurs de la ville de
-                    Clermont Ferrand et m’avais demandé de lui trouver une solution.
-                    Trouvant l’idée amusante je me suis pris au jeu et j’ai donc codé en swiftUI une
-                    application IOS qui génère des ticket de tram reçus par SMS.</p>
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">TOWN FORGE</h3>
-                <p class="project-description"></p> <!-- AJOUTER UNE DESCRIPTION -->
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">RETRO serveur cloud</h3>
-                <p class="project-description"></p> <!-- AJOUTER UNE DESCRIPTION -->
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 class="project-title">ZERO SHELL</h3>
-                <p class="project-description"></p> <!-- AJOUTER UNE DESCRIPTION -->
-                <div class="project_btn_container">
-                    <button class="project_btn">Voir le projet</button>
-                </div>
-            </div>
-
-
         </div>
-    </div>
-</section>
+    </section>
+
+    <script>
+        
+        function filterSelection(category) {
+            var items = document.getElementsByClassName("project-item");
+            if (category == "all") {
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].getAttribute("data-category") == category) {
+                        items[i].style.display = "block";
+                    } else {
+                        items[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script> 
+         
+</body>
+</html>
