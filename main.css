@@ -1,0 +1,528 @@
+/* Réinitialisation de certains styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-main {
+    flex: 1;
+}
+
+/* Styles pour l'en-tête */
+.site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+}
+
+.site-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: -5%;
+}
+
+.site-title2 {
+    text-align: center;
+    font-size: 2rem;
+    width: 50%; /* or any specific width */
+    margin: auto;
+}
+
+.header_container{
+    flex-basis: 100%; /* Full width for the text container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: -8% ;
+
+}
+
+/*logo*/
+.logo{
+    margin-left: 2%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 100px;
+    height: 100px;
+}
+
+.site-nav {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-item {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour le contenu principal */
+.site-main {
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Styles pour les projets */
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    width: 48%;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 1rem;
+}
+
+.project_btn_container{
+    display: flex;
+    justify-content: center;
+}
+.project_btn {
+    border-radius: 9px;
+    background-color: #000000;
+    border: none;
+    
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    padding: 13px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 36px;
+    font-size: 1rem;
+    display: inline-block; /* Assurez-vous que le bouton est en ligne */
+
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.project_btn:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    top: 12px;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .project_btn:hover{
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  
+  .project_btn:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+
+/* Styles pour la section À propos */
+.about_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about-section, .contact-section {
+    padding: 2rem 0;
+    
+}
+
+.section-description{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+/* Styles pour le formulaire de contact */
+.contact-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-block; /* Assurez-vous que le bouton est en ligne */
+    /* centered */
+    margin-left: 50%;
+}
+
+.submit-button:hover {
+    background-color: #555;
+}
+
+/* Styles pour le pied de page */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.container {
+    flex-basis: 100%; /* Full width for the text container */
+}
+
+.button-container {
+    display: flex; /* Use flexbox for buttons */
+    align-items: center; /* Vertically center buttons */
+    flex-grow: 1; /* Grow to take available space */
+    justify-content: flex-start; /* Align buttons to the left */
+}
+
+.darkmode-container {
+    display: flex; /* Use flexbox for dark mode button */
+    align-items: center; /* Vertically center dark mode button */
+    justify-content: flex-end; /* Align dark mode button to the right */
+    flex-grow: 1; /* Grow to take available space */
+}
+
+/* Styling for LinkedIn button */
+.linkedIn_btn,
+.github_btn,
+.darkmode_btn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    margin-top: -3%;
+}
+
+.linkedIn_btn{
+    margin-left: 2%;
+}
+
+/*hover that make the linkeid image blue*/
+.linkedIn_btn:hover img{
+    content: url('icons/linkedin1.png');
+}
+.github_btn:hover img{
+    content: url('icons/github1.png');
+}
+
+.github_btn{
+    margin-left: 1%;
+}
+
+.linkedIn_btn img,
+.github_btn img,
+.darkmode_btn img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* Styling for Dark Mode button */
+.darkmode_btn {
+    background-color: transparent;
+    color: #ffffff; /* Dark grey color */
+    border: 2px solid #292929; /* Dark grey color */
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for icon inside button */
+.darkmode_btn img {
+    width: 30px; /* Adjust size of the icon */
+    margin-right: 10px; /* Add spacing between icon and text */
+}
+
+/* Styling for text inside button */
+.darkmode_btn span {
+    margin-right: 10px; /* Add spacing between icon and text */
+}
+
+
+
+
+/* styles.css */
+
+/* Section d'accueil */
+.home-section {
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Résumé */
+.about-summary {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 2rem;
+}
+
+.summary-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.summary-description {
+    font-size: 1rem;
+}
+
+/* Projets */
+.featured-projects {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.projects-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.project-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    flex: 1 1 calc(33% - 1rem);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 1rem;
+}
+
+
+
+/* Styling for Dark Mode */
+.dark-mode .site-header,
+.dark-mode .site-footer {
+    background-color: #222;
+}
+
+.dark-mode .site-header, .dark-mode .site-footer, .dark-mode .nav-link {
+    color: #fff;
+}
+
+
+.dark-mode .darkmode_btn img {
+    content: url('icons/dark.png');
+}
+
+.dark-mode .project-item {
+    background-color: #444;
+    border-color: #555;
+}
+
+.dark-mode .contact-form {
+    background-color: #444;
+    border-color: #555;
+}
+
+.dark-mode .submit-button {
+    background-color: #555;
+}
+
+.dark-mode .site-main {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .site-footer {
+    background-color: #333;
+}
+
+.dark-mode .darkmode_btn {
+    border-color: #fff;
+}
+
+.dark-mode .darkmode_btn:hover {
+    background-color: #555;
+}
+
+.dark-mode .home-section {
+    background-color: #333;
+}
+
+.dark-mode .section-title {
+    color: #fff;
+}
+
+.dark-mode .section-description {
+    color: #fff;
+}
+
+.dark-mode .about-summary {
+    background-color: #444;
+    border-color: #555;
+}
+
+.dark-mode .summary-title {
+    color: #fff;
+}
+
+.dark-mode .summary-description {
+    color: #fff;
+}
+
+.dark-mode .featured-projects {
+    background-color: #444;
+    border-color: #555;
+}
+
+.dark-mode .projects-title {
+    color: #fff;
+}
+
+.dark-mode .project-item {
+    background-color: #555;
+    border-color: #666;
+}
+
+.dark-mode .project-title {
+    color: #fff;
+}
+
+.dark-mode .project-description {
+    color: #fff;
+}
+
+.dark-mode .site-wrapper {
+    background-color: #333;
+}
+
+/* Responsive */
+
+/* Pour les écrans de taille moyenne */
+
+/* Pour les écrans de telephones */
+
+@media (max-width: 768px) {
+    .projects-list {
+        flex-direction: column;
+    }
+    .project-item {
+        width: 100%;
+    }
+}

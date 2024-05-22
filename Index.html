@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="site-header">
+        <div class = "logo">
+        <img src="icons/beardMan.png" alt="Logo" class="site-logo">
+        <h1 class="site-title">R3TR0</h1>
+        </div>
+        
+        <div class="header_container">
+            <h2 class="site-title2">Mohamed Ali Damergi</h2>
+            <nav class="site-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="acceuil.html" class="nav-link" data-page="acceuil">Accueil</a></li>
+                    <li class="nav-item"><a href="projets.html" class="nav-link" data-page="projets">Projets</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main" id="content">
+        <!-- Le contenu de la page sera chargé ici -->
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; Mohamed Ali Damergi / R3TR0 tout droit deservé</p>
+        </div>
+    
+        <div class="button-container">
+            <a class="linkedIn_btn" href="https://linkedin.com">
+                <img src="icons/linkedin.png" alt="LinkedIn">
+            </a>
+            
+            <a class="github_btn" href="https://github.com">
+                <img src="icons/github.png" alt="GitHub">
+            </a>
+        </div>
+    
+        <div class="darkmode-container">
+            <button class="darkmode_btn">
+                <img src="icons/sun.png" alt="DarkMode">
+                <span>Dark Mode</span>
+            </button>
+        </div>
+    </footer>
+    
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to load the content
+        function loadPage(page) {
+            fetch(page + '.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                });
+        }
+
+        // Load the default home page
+        loadPage('acceuil');
+
+        // Add click events to navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const page = this.getAttribute('data-page');
+                loadPage(page);
+            });
+        });
+
+        // Dark mode toggle
+        const darkmodeBtn = document.querySelector('.darkmode_btn');
+        const body = document.body;
+        darkmodeBtn.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+    });
+</script>
+</body>
+</html>
