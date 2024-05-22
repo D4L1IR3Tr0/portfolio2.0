@@ -73,28 +73,62 @@ body {
 }
 
 .site-nav {
-    margin-top: 1rem;
+    margin-top: 1%;
     text-align: center;
+    position: relative; /* Ensure it's the relative positioning context for the absolute elements */
 }
 
 .nav-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* Ensure it's not taking full width */
 }
 
 .nav-item {
-    display: inline;
+    display: inline-block;
     margin: 0 1rem;
+    position: relative; /* Ensure it's the relative positioning context for the absolute elements */
 }
 
 .nav-link {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    position: relative; /* Ensure it's the relative positioning context for the absolute elements */
+    padding: 0.1rem 0; /* Add padding to create space between text and animation */
 }
 
-.nav-link:hover {
-    text-decoration: underline;
+/* nav list animation */
+
+.site-nav .nav-link:before, .site-nav .nav-link:after {
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: #FFF;
+    transition: all 0.3s;
 }
+
+.site-nav .nav-link:before {
+    left: 0;
+    top: 0;
+    transform: translateY(-0.5rem); /* Adjust position to add space above the text */
+}
+
+.site-nav .nav-link:after {
+    right: 0;
+    bottom: 0;
+    transform: translateY(0.5rem); /* Adjust position to add space below the text */
+}
+
+.site-nav .nav-link:hover:before, .site-nav .nav-link:hover:after {
+    opacity: 1;
+    width: 100%;
+}
+
+
 
 /* Styles pour le contenu principal */
 .site-main {
