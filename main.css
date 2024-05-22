@@ -525,4 +525,13 @@ body {
     .project-item {
         width: 100%;
     }
+    .site-header {
+        flex-direction: column;
+    }
+    .site-title {
+        margin-top: 0;
+    }
+    .logo{
+        display: none;
+    }
 }
