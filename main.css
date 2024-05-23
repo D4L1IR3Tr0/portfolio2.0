@@ -768,6 +768,10 @@ span {
     color: #fff;
 }
 
+.display-btn {
+    display:none;
+}
+
 .dark-mode .filter-btn {
     color: #fff;
 }
@@ -800,4 +804,66 @@ span {
     .logo{
         display: none;
     }
+
+    .github_btn,.linkedIn_btn,.darkmode_btn{
+        margin-top: 10%;
+    }
+
+    /* rearanger le menu des filtres pour l'adapter au mobile*/
+    .filtre_menu_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .display-btn {
+        display: none; /* Hide the button by default */
+    }
+    
+    /* Media query to show the button on small screens */
+    @media screen and (max-width: 768px) {
+        .display-btn {
+            display: block; /* Show the button on small screens */
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+    
+        .display-btn:hover {
+            background-color: #606060;
+        }
+    
+        .filter-buttons {
+            display: none; /* Hide filter buttons on small screens */
+            flex-direction: column; /* Arrange buttons in column */
+            align-items: center; /* Center buttons horizontally */
+            width: 100%; /* Ensure buttons take full width */
+        }
+    
+        .filter-buttons.show {
+            display: flex; /* Show filter buttons when toggled */
+        }
+    
+        .filter-btn {
+            margin: 5px 0; /* Add spacing between buttons */
+            width: 80%; /* Adjust button width to look better on small screens */
+            padding: 10px;
+            font-size: 14px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+    
+        .filter-btn:hover {
+            background-color: #e0e0e0;
+        }
+    }
+    
 }

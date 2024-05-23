@@ -2,17 +2,20 @@
     <section id="projects" class="projects-section">
         <div class="container">
             <div class="filtre_menu_container">
-                <button class="filter-btn" onclick="filterSelection('all', this)">Tous</button>
-                <button class="filter-btn" onclick="filterSelection('game', this)">Jeux Vidéo</button>
-                <button class="filter-btn" onclick="filterSelection('simulation', this)">Simulation</button>
-                <button class="filter-btn" onclick="filterSelection('software', this)">Logiciel</button>
-                <button class="filter-btn" onclick="filterSelection('hardware', this)">Matériel/Robotique</button>
-                <button class="filter-btn" onclick="filterSelection('web', this)">Web</button>
-                <button class="filter-btn" onclick="filterSelection('pentesting', this)">Pentesting</button>
-                <button class="filter-btn" onclick="filterSelection('app', this)">Application Mobile</button>
-                <button class="filter-btn" onclick="filterSelection('database', this)">Base de Données</button>
-                <button class="filter-btn" onclick="filterSelection('network', this)">Réseau</button>
-                <button class="filter-btn" onclick="filterSelection('other', this)">Autre</button>
+                <button class="display-btn" onclick="toggleFilters()">Afficher les filtres</button>
+                <div class="filter-buttons" id="filterButtons">
+                    <button class="filter-btn" onclick="filterSelection('all', this)">Tous</button>
+                    <button class="filter-btn" onclick="filterSelection('game', this)">Jeux Vidéo</button>
+                    <button class="filter-btn" onclick="filterSelection('simulation', this)">Simulation</button>
+                    <button class="filter-btn" onclick="filterSelection('software', this)">Logiciel</button>
+                    <button class="filter-btn" onclick="filterSelection('hardware', this)">Matériel/Robotique</button>
+                    <button class="filter-btn" onclick="filterSelection('web', this)">Web</button>
+                    <button class="filter-btn" onclick="filterSelection('pentesting', this)">Pentesting</button>
+                    <button class="filter-btn" onclick="filterSelection('app', this)">Application Mobile</button>
+                    <button class="filter-btn" onclick="filterSelection('database', this)">Base de Données</button>
+                    <button class="filter-btn" onclick="filterSelection('network', this)">Réseau</button>
+                    <button class="filter-btn" onclick="filterSelection('other', this)">Autre</button>
+                </div>
             </div>
 
             <div class="projects-list">
