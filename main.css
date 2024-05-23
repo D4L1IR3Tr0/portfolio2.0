@@ -50,6 +50,7 @@ body {
     font-size: 2rem;
     width: 50%; /* or any specific width */
     margin: auto;
+    margin-top: 1%;
 }
 
 .header_container{
@@ -79,6 +80,7 @@ body {
     margin-top: 1%;
     text-align: center;
     position: relative; /* Ensure it's the relative positioning context for the absolute elements */
+    margin-bottom: 1%;
 }
 
 .nav-list {
@@ -86,6 +88,7 @@ body {
     padding: 0;
     margin: 0;
     display: inline-block; /* Ensure it's not taking full width */
+    cursor: pointer;
 }
 
 .nav-item {
@@ -195,6 +198,8 @@ body {
     display: inline-block;
     position: relative;
     transition: 0.5s;
+    text-decoration: none; /* Remove underline from anchor */
+    overflow: hidden; /* Hide overflowing pseudo-elements */
 }
 
 .project_btn:after {
@@ -222,19 +227,47 @@ body {
 }
 
 .filter-btn {
-    background-color: #444;
-    color: #fff;
+    background-color: transparent;
+    color: #000000;
     border: none;
     padding: 10px 20px;
     margin: 0 10px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    position: relative; /* Ensure position relative for pseudo-elements */
+    overflow: hidden; /* Hide overflowing pseudo-elements */
+    font-size: 1rem;
+}
+.filter-btn::before,
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    transition: transform 0.3s ease;
 }
 
-.filter-btn:hover {
-    background-color: #666;
+.filter-btn::before {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
 }
+
+.filter-btn::after {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+}
+
+.filter-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.filter-btn:hover::after {
+    transform: translateX(-100%);
+}
+
 
 .filter-btn.active {
     background-color: #888;
@@ -247,6 +280,8 @@ body {
 .project-item.hide {
     display: none; /* Hide non-filtered projects */
 }
+
+
 
 
 /* Styles pour la section À propos */
@@ -582,6 +617,28 @@ body {
 
 .dark-mode .site-wrapper {
     background-color: #333;
+}
+
+.dark-mode .site-nav {
+    background-color: #222;
+}
+
+.dark-mode .nav-link {
+    color: #fff;
+}
+
+.dark-mode .filter-btn {
+    color: #fff;
+}
+
+.dark-mode .filter-btn::before,
+
+.dark-mode .filter-btn::after {
+    background-color: #fff;
+}
+
+.dark-mode .filter-btn.active {
+    background-color: #888;
 }
 
 /* Responsive */
