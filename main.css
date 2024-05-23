@@ -442,8 +442,11 @@ body {
     cursor: pointer;
     font-size: 1rem;
     display: inline-block; /* Assurez-vous que le bouton est en ligne */
-    /* centered */
-    margin-left: 46.5%;
+}
+
+.form-button {
+    text-align: center; /* Centre le bouton */
+    margin-top: 20px;
 }
 
 .submit-button:hover {
