@@ -1,4 +1,3 @@
-/* Réinitialisation de certains styles par défaut */
 * {
     margin: 0;
     padding: 0;
@@ -182,6 +181,112 @@ body {
     justify-content: center;
 }
 
+.category-tags {
+    margin: 10px 0; /* Space between the title and the tags */
+}
+
+.category-tag_JV {
+    display: inline-block;
+    background-color: #009d97; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_W {
+    display: inline-block;
+    background-color: #db813c; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_APP {
+    display: inline-block;
+    background-color: #456f56; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_SIM {
+    display: inline-block;
+    background-color: #edad6e; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_LOG {
+    display: inline-block;
+    background-color: #c225b5; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_RES {
+    display: inline-block;
+    background-color: #398376; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_BD {
+    display: inline-block;
+    background-color: #e2d118; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_HR {
+    display: inline-block;
+    background-color: #3ba30b; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_PT {
+    display: inline-block;
+    background-color: #980b56; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+.category-tag_O {
+    display: inline-block;
+    background-color: #3e7864; /* Background color of the tag */
+    color: #fff; /* Text color */
+    padding: 5px 10px;
+    margin-right: 5px; /* Space between tags */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.875rem; /* Adjust the font size */
+}
+
+
+
 .project_btn {
     border-radius: 9px;
     background-color: #000000;
@@ -268,10 +373,11 @@ body {
     transform: translateX(-100%);
 }
 
-
 .filter-btn.active {
-    background-color: #888;
+    background-color: #000000;
+    color: #fff;
 }
+
 
 .project-item.show {
     display: block; /* Show filtered projects */
@@ -355,13 +461,13 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
-    flex-wrap: wrap; /* Allow items to wrap */
+    flex-wrap: wrap;
 }
 
 
 
 .container {
-    flex-basis: 100%; /* Full width for the text container */
+    flex-basis: 100%;
     margin-bottom: -1%;
 }
 
@@ -371,20 +477,19 @@ body {
 }
 
 .button-container {
-    display: flex; /* Use flexbox for buttons */
-    align-items: center; /* Vertically center buttons */
-    flex-grow: 1; /* Grow to take available space */
-    justify-content: flex-start; /* Align buttons to the left */
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-start;
 }
 
 .darkmode-container {
-    display: flex; /* Use flexbox for dark mode button */
-    align-items: center; /* Vertically center dark mode button */
-    justify-content: flex-end; /* Align dark mode button to the right */
-    flex-grow: 1; /* Grow to take available space */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
 }
 
-/* Styling for LinkedIn button */
 .linkedIn_btn,
 .github_btn,
 .darkmode_btn {
@@ -402,7 +507,6 @@ body {
     margin-left: 2%;
 }
 
-/*hover that make the linkeid image blue*/
 .linkedIn_btn:hover img{
     content: url('icons/linkedin1.png');
 }
@@ -421,26 +525,23 @@ body {
     margin-right: 10px;
 }
 
-/* Styling for Dark Mode button */
 .darkmode_btn {
     background-color: transparent;
-    color: #ffffff; /* Dark grey color */
-    border: 2px solid #292929; /* Dark grey color */
+    color: #ffffff;
+    border: 2px solid #292929;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
 }
 
-/* Styling for icon inside button */
 .darkmode_btn img {
-    width: 30px; /* Adjust size of the icon */
-    margin-right: 10px; /* Add spacing between icon and text */
+    width: 30px;
+    margin-right: 10px;
 }
 
-/* Styling for text inside button */
 .darkmode_btn span {
-    margin-right: 10px; /* Add spacing between icon and text */
+    margin-right: 10px;
 }
 
 
@@ -461,6 +562,45 @@ body {
     margin-bottom: 2rem;
     font-size: 1.2rem;
 }
+
+.row{
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+
+}
+
+progress {
+    height: 15px;
+    border-radius: 60%;
+    width: 100%;
+    background-color: #f3f3f3;
+    margin-bottom: 20px;
+    
+}
+progress::-webkit-progress-value {
+    background-color: #ffaa00;
+    border-radius: 20px;
+}
+progress::-moz-progress-bar {
+    border-radius: 20px;
+}
+progress::-webkit-progress-bar {
+    background-color: #008b8b;
+    border-radius: 20px;
+}
+
+span {
+    display: block;
+    position: relative;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #888888;
+    line-height: 17px;
+    margin-bottom: 5px;
+}
+
 
 /* Résumé */
 .about-summary {
@@ -520,9 +660,7 @@ body {
     font-size: 1rem;
 }
 
-
-
-/* Styling for Dark Mode */
+/* DARK MODE */
 .dark-mode .site-header,
 .dark-mode .site-footer {
     background-color: #222;
@@ -640,10 +778,6 @@ body {
 .dark-mode .filter-btn.active {
     background-color: #888;
 }
-
-/* Responsive */
-
-/* Pour les écrans de taille moyenne */
 
 /* Pour les écrans de telephones */
 
