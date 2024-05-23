@@ -582,14 +582,14 @@ progress {
     
 }
 progress::-webkit-progress-value {
-    background-color: #ffaa00;
+    background-color: #ff9d00;
     border-radius: 20px;
 }
 progress::-moz-progress-bar {
     border-radius: 20px;
 }
 progress::-webkit-progress-bar {
-    background-color: #008b8b;
+    background-color: #6f6f6f;
     border-radius: 20px;
 }
 
