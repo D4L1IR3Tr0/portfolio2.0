@@ -688,6 +688,10 @@ span {
     border-color: #555;
 }
 
+#message {
+    height: 400px;
+}
+
 .dark-mode .submit-button {
     background-color: #555;
 }
