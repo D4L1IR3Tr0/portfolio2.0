@@ -6,7 +6,9 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/png" href="images/logoBackground.jpg">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+    <script src="projet.js"></script>
     
 </head>
 <body>
@@ -36,7 +38,7 @@
     <footer class="site-footer">
         <div class="container">
             <p>&copy; Mohamed Ali Damergi / R3TR0 tout droit deservé</p>
-            <p>Les icones utilisés sont disponnibles sur <a href="https://icons8.com/">icon8</a></p>
+            <p>Les icones utilisées sont disponnibles sur <a href="https://icons8.com/">icon8</a></p>
         </div>
     
         <div class="button-container">
@@ -58,76 +60,6 @@
     </footer>
     
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Function to load the content
-        function loadPage(page) {
-            fetch(page + '.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('content').innerHTML = data;
-                });
-        }
-
-        // Load the default home page
-        loadPage('acceuil');
-
-        // Add click events to navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const page = this.getAttribute('data-page');
-                loadPage(page);
-            });
-        });
-
-        // Dark mode toggle
-        const darkmodeBtn = document.querySelector('.darkmode_btn');
-        const body = document.body;
-        darkmodeBtn.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-
-            console.log('Dark mode toggled');
-        });
-    });
-</script>
-
-<script>
-        
-        function filterSelection(category, element) {
-    var items = document.getElementsByClassName("project-item");
-    if (category == "all") {
-        for (var i = 0; i < items.length; i++) {
-            items[i].style.display = "block";
-        }
-    } else {
-        for (var i = 0; i < items.length; i++) {
-            if (items[i].getAttribute("data-category") == category) {
-                items[i].style.display = "block";
-            } else {
-                items[i].style.display = "none";
-            }
-        }
-    }
-    
-    // Remove 'active' class from all buttons
-    var buttons = document.getElementsByClassName("filter-btn");
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove("active");
-    }
-
-    // Add 'active' class to the clicked button
-    element.classList.add("active");
-}
-</script> 
-
-<script>
-    function toggleFilters() {
-        var filterButtons = document.getElementById('filterButtons');
-        filterButtons.classList.toggle('show');
-    }
-</script>
     
 </body>
 </html>
