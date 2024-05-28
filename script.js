@@ -75,3 +75,15 @@ function toggleFilters() {
     var filterButtons = document.getElementById('filterButtons');
     filterButtons.classList.toggle('show');
 }
+
+function waitForCanvas() {
+    var canvas = document.getElementById('myCanvas');
+    if (canvas) {
+        var ctx = canvas.getContext('2d');
+        // Votre code ici
+        console.log("Canvas trouvé et contexte initialisé.");
+    } else {
+        console.log("Canvas non trouvé, nouvelle tentative dans 100ms.");
+        setTimeout(waitForCanvas, 100); // Réessayer après 100ms
+    }
+}
