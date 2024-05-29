@@ -36,14 +36,14 @@ function initializeGame(canvas) {
     }
 
     function drawBullets() {
-        ctx.fillStyle = '#fff';
+        ctx.fillStyle = '#000000';
         bullets.forEach(bullet => {
             ctx.fillRect(bullet.x, bullet.y, 5, 10);
         });
     }
 
     function drawEnemyBullets() {
-        ctx.fillStyle = '#ff0';
+        ctx.fillStyle = '#000000';
         enemyBullets.forEach(bullet => {
             ctx.fillRect(bullet.x, bullet.y, 5, 10);
         });
