@@ -133,15 +133,30 @@ function initializeGame(canvas) {
     }
 
     function moveShip(event) {
-        if (event.key === 'ArrowLeft' && ship.x > 0) {
-            ship.x -= 20;
+        let touchX;
+
+        // Si c'est un événement tactile, utilise les coordonnées du toucher
+        if (event.type === 'touchstart' || event.type === 'touchmove' || event.type === 'touchend') {
+            const touch = event.touches[0];
+            const canvasRect = canvas.getBoundingClientRect();
+            touchX = touch.clientX - canvasRect.left;
+        } else if (event.type === 'keydown') {
+            // Si c'est un événement de clavier, déplace le vaisseau selon la touche enfoncée
+            if (event.key === 'ArrowLeft' && ship.x > 0) {
+                ship.x -= 20;
+            }
+            if (event.key === 'ArrowRight' && ship.x + ship.width < canvas.width) {
+                ship.x += 20;
+            }
+            // Si la touche est la barre d'espace, tirer une balle
+            if (event.key === ' ') {
+                bullets.push({ x: ship.x + ship.width / 2 - 2.5, y: ship.y, width: 5, height: 10 });
+            }
+            return; // Quitte la fonction après avoir traité l'événement du clavier
         }
-        if (event.key === 'ArrowRight' && ship.x + ship.width < canvas.width) {
-            ship.x += 20;
-        }
-        if (event.key === ' ') {
-            bullets.push({ x: ship.x + ship.width / 2 - 2.5, y: ship.y, width: 5, height: 10 });
-        }
+
+        // Déplace le vaisseau si l'événement est un toucher
+        ship.x = touchX - ship.width / 2;
     }
 
     function gameLoop() {
@@ -164,7 +179,16 @@ function initializeGame(canvas) {
     function startGame() {
         if (gameRunning) return;
         gameRunning = true;
+
+        // Ajoute les écouteurs d'événements pour les écrans tactiles
+        canvas.addEventListener('touchstart', moveShip);
+        canvas.addEventListener('touchmove', moveShip);
+        canvas.addEventListener('touchend', moveShip);
+
+        // Ajoute l'écouteur d'événement pour le clavier
         document.addEventListener('keydown', moveShip);
+
+        // Lance le jeu
         setInterval(createEnemy, enemyCreationInterval);
         gameLoop();
     }
