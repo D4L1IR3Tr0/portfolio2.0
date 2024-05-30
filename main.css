@@ -165,6 +165,7 @@ body {
     padding: 1rem;
     margin-bottom: 1rem;
     width: 48%;
+    height: 400px; /* Ensures all items have the same height */
 }
 
 .project-title {
@@ -179,6 +180,10 @@ body {
 .project_btn_container {
     display: flex;
     justify-content: center;
+    width: 100%; /* Ensures the button container spans the full width */
+    position: relative;
+
+
 }
 
 .category-tags {
