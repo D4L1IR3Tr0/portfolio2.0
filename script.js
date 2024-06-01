@@ -87,3 +87,9 @@ function toggleFilters() {
     var filterButtons = document.getElementById('filterButtons');
     filterButtons.classList.toggle('show');
 }
+
+// Appeler filterSelection avec la catégorie "all" lorsque la page se charge
+window.onload = function() {
+    var defaultButton = document.querySelector('.filter-btn.active');
+    filterSelection('all', defaultButton);
+}
