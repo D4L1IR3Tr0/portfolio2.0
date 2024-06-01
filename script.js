@@ -1,17 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Function to load the content
-    function loadPage(page) {
+    function loadPage(page, addHistory = true) {
         fetch(page + '.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('content').innerHTML = data;
+                window.scrollTo(0, 0); // Scroll to the top of the page
                 attachProjectLinkEvents(); // Re-attach events to the newly loaded content
+                if (addHistory) {
+                    history.pushState({page: page}, null, `#${page}`);
+                }
             })
             .catch(error => console.error('Error loading page:', error));
     }
 
     // Load the default home page
-    loadPage('acceuil');
+    const initialPage = window.location.hash ? window.location.hash.substring(1) : 'acceuil';
+    loadPage(initialPage, false);
 
     // Add click events to navigation links
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -32,6 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', function(event) {
+        if (event.state && event.state.page) {
+            loadPage(event.state.page, false);
+        }
+    });
 
     // Initial attachment of project link events
     attachProjectLinkEvents();

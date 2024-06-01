@@ -1,23 +1,57 @@
-<html>
-    <head>
-        <title>Game of life</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<div class="projet">
+    <div class="search-box">
+    </div>
 
-        <div class="site-wrapper">
-    
-            <h1> EN COURS DE CONSTRUCTION</h1>
-                <img src="../images/construction.gif" alt="Under Construction" class="underConstruction">
-    
-        <div id="scoreBoard">Score: 0</div>
-        <canvas id="gameCanvas" width="600" height="500"></canvas>
-    
+    <h1 class="projet-titles">SIMULATEUR PSEUDO ALÉATOIRE DU JEU DE LA VIE</h1>
+    <h2 class="projet-titles">Introduction</h2>
+    <p class="content">"Ce code est une implémentation du célèbre Game of Life de John Conway, un automate cellulaire développé en 1970.<br> 
+        Utilisant la bibliothèque SDL2, ce programme crée une interface graphique qui affiche l'évolution des cellules en temps réel. Le Jeu de la Vie est connu pour sa capacité à simuler des phénomènes complexes à partir de règles simples.
+    </p>
+
+    <h2 class="projet-titles">Fonctionnement</h2>
+    <p class="content">Ce code est une implémentation du célèbre Game of Life de John Conway, un automate cellulaire développé en 1970. Utilisant la bibliothèque SDL2, ce programme crée une interface graphique qui affiche l'évolution des cellules en temps réel. Le Jeu de la Vie est connu pour sa capacité à simuler des phénomènes complexes à partir de règles simples.
+    </p>
+
+    <ul>
+        <li>Une cellule vivante avec deux ou trois voisines vivantes reste vivante ; sinon, elle meurt.</li>
+        <li>Une cellule morte avec exactement trois voisines vivantes devient vivante.</li>
+    </ul>
+
+    <h2 class="projet-titles">2. Implementation et Interactions</h2>
+    <p class="content"></p>
+    <ul>
+        <li>Grille et Cellules : La grille utilisée dans ce code a une dimension de 40x60 cellules, et chaque cellule mesure 10 pixels.</li>
+        <li>Initialisation : La configuration initiale des cellules est générée aléatoirement.</li>
+        <li>Interactions :
+            <ul>
+                <li>Cliquez pour changer l'état : Les utilisateurs peuvent interagir avec la grille en cliquant sur les cellules, ce qui permet de les changer d'état (de vivante à morte et vice versa).</li>
+                <li>Évolution de la grille : En appuyant sur la barre d'espace, le joueur peut faire évoluer la grille selon les règles du jeu.</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+    <p class="content">
+        L'utilisation de la bibliothèque SDL2 permet une mise à jour rapide et visuelle de la grille, rendant l'expérience utilisateur fluide et interactive.
+    </p>
+    <h2 class="projet-titles">Gallerie</h2>
+    <div class="cadre">
+        <div class="image1-container">
+            <img src="images/gol/Pres1.gif" alt="retroCloud">
+
+            <img src="images/gol/Pres2.gif" alt="sr">
+
+            <img src="images/gol/Pres3.gif" alt="sr">
         </div>
-    
-    
-        <script src="game.js"></script>
-        
-        
-        </body>
-</html>
+    </div>
+    <h2 class="projet-titles">Lien vers le projet</h2>
+    <p class="content">Consultez le dépôt GitHub de Space Revolution pour plus d'informations et pour accéder au code source :
+        <br><a class="projet-link" href="https://github.com/yourusername/retro-cloud" target="_blank">game of life sur GitHub</a></p>
+</div>
+
+<!-- Le Modal -->
+<div id="myModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="Modal Image">
+    </div>
+</div>

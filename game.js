@@ -78,6 +78,15 @@ function initializeGame(canvas) {
         enemies.forEach((enemy, index) => {
             enemy.y += enemySpeed;
             if (enemy.y > canvas.height) {
+                // En fonction du type d'ennemi, le score est diminué
+                if (enemy.type === 'asteroid') {
+                    score -= 5;
+                } else if (enemy.type === 'shooter') {
+                    score -= 10;
+                }
+                // Mise à jour de l'affichage du tableau des scores
+                scoreBoard.textContent = 'Score: ' + score;
+                // Retirer l'ennemi de la liste
                 enemies.splice(index, 1);
             }
 

@@ -728,6 +728,9 @@ span {
 .dark-mode  .projet-titles {
     color: #fff;
 }
+.dark-mode .projet-link {
+    color: #fff;
+}
 
 .dark-mode .darkmode_btn {
     border-color: #fff;
@@ -792,6 +795,14 @@ span {
 
 .dark-mode .project-description {
     color: #fff;
+}
+
+.dark-mode .projet-img-title {
+    filter: invert(1);
+}
+
+.dark-mode .underConstruction {
+    filter: invert(1);
 }
 
 .dark-mode .site-wrapper {
@@ -941,7 +952,6 @@ span {
 
 .video video {
     width: 122%;
-    border: 1px solid #ddd;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -959,7 +969,6 @@ span {
     margin-left: 32%;
     width: 63%;
     cursor: pointer;
-    border: 1px solid #ddd;
     border-radius: 8px;
 }
 
@@ -975,7 +984,6 @@ span {
     cursor: pointer;
     background-color: #3ba30b;
     width: 80%;
-    border: 1px solid #ddd;
     border-radius: 8px;
 }
 
