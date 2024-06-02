@@ -802,7 +802,7 @@ span {
 }
 
 .dark-mode .underConstruction {
-    filter: invert(1);
+    filter: invert(0.3);
 }
 
 .dark-mode .site-wrapper {
