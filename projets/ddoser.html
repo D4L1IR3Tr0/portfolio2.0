@@ -1,0 +1,79 @@
+<div class="projet">
+
+    <div class="titleimg">
+        <img class="projet-img-title" src="images/ddoser/title.png">
+    </div>
+
+    <h2 class="projet-titles">Introduction</h2>
+    <p class="content">Ma passion pour le pentesting et la securité m'a conduite a developper un reverse shell en langage Go (Golang). L'objectif de ce projet est de créer un outil simple mais puissant permettant de prendre le contrôle d'un ordinateur cible de manière distante. Ce reverse shell est conçu pour être indétectable par les antivirus grâce à la simplicité de ses commandes et de son fonctionnement. Ce rapport décrit le fonctionnement, les fonctionnalités, et les commandes disponibles dans ce reverse shell.</p>
+
+    <h2 class="projet-titles">Fonctionnement</h2>
+    <p class="content">Un reverse shell est un type de shell qui permet à un attaquant de prendre le contrôle d'un système cible à distance. Le fonctionnement de base d'un reverse shell repose sur l'établissement d'une connexion entre la machine cible (victime) et la machine de l'attaquant. Contrairement à un shell traditionnel où la connexion est initiée par l'attaquant, dans un reverse shell, c'est la machine cible qui initie la connexion vers l'attaquant.</p>
+
+    <p class="content">Le reverse shell en Go que j'ai développé fonctionne de la manière suivante : <br>
+    <ul>
+        <li>1 La machine cible exécute le programme du reverse shell.</li>
+        <li>2 La machine cible se met a ecouter sur le port specifié dans le code.</li>
+        <li>3 L'attaquant a tout moment se connecte a ce port en question.</li>
+        <li>4 Une fois la connexion établie, l'attaquant peut envoyer des commandes à la machine cible via cette connexion.</li>
+        <li>5 La machine cible exécute les commandes reçues et renvoie les résultats à l'attaquant.</li>
+    </ul>
+    </p>
+    <div class="cadre">
+
+    </div>
+
+    <h2 class="projet-titles">Commandes disponnibles</h2>
+
+    <p class="content">Le reverse shell propose une large gamme de commandes permettant de contrôler la machine cible de diverses manières. Voici la liste des commandes disponibles :<br>
+    <ul>
+        <li><strong>help</strong> : Affiche la liste des commandes disponibles.</li>
+        <li><strong>check</strong> : Vérifie si le serveur est actif.</li>
+        <li><strong>get_ip</strong> : Récupère les adresses IP locale et globale du serveur.</li>
+        <li><strong>exec</strong> : Exécute une commande shell.</li>
+        <li><strong>get_os</strong> : Récupère le nom du système d'exploitation.</li>
+        <li><strong>set_attacker</strong> &lt;ip address&gt; : Change l'adresse IP de l'attaquant.</li>
+        <li><strong>get_attacker</strong> : Récupère l'adresse IP de l'attaquant.</li>
+        <li><strong>shell</strong> : Ouvre un shell.</li>
+        <li><strong>ps</strong> : Liste tous les processus en cours.</li>
+        <li><strong>kill</strong> &lt;pid&gt; : Termine un processus spécifié.</li>
+        <li><strong>migrate</strong> : Tente de migrer le processus vers un autre processus (fonctionnalité non implémentée).</li>
+        <li><strong>persist</strong> : Configure le backdoor pour qu'il s'exécute au démarrage.</li>
+        <li><strong>escalate</strong> : Tente d'obtenir des privilèges administratifs.</li>
+        <li><strong>set_dns</strong> &lt;name&gt; &lt;ip address&gt; : Change les paramètres DNS.</li>
+        <li><strong>windefucker</strong> : Désactive la protection en temps réel de Windows Defender (affiche des activités sur l'écran pendant 3 secondes).</li>
+        <li><strong>calcexpress</strong> : Ouvre une calculatrice chaque fois que la souris bouge.</li>
+        <li><strong>folderexpress</strong> : Crée un nouveau dossier sur le bureau toutes les 200ms.</li>
+        <li><strong>mouselocker</strong> : Verrouille la souris à la position (0,0).</li>
+        <li><strong>hacked</strong> : Affiche un message "you have been hacked" (non utile mais amusant).</li>
+        <li><strong>shutdown</strong> : Éteint la machine cible.</li>
+        <li><strong>message</strong> &lt;text&gt; &lt;title&gt; &lt;button&gt; : Envoie un message à la victime (affiche des options de boutons si les paramètres sont vides).</li>
+        <li><strong>keyboard</strong> &lt;key1,key2...&gt; : Envoie des frappes clavier.</li>
+        <li><strong>get_screen</strong> : Récupère le flux vidéo de l'écran (fonctionnalité non implémentée).</li>
+        <li><strong>get_cam</strong> : Récupère le flux vidéo de la webcam (fonctionnalité non implémentée).</li>
+        <li><strong>get_mic</strong> : Récupère le flux audio du microphone (fonctionnalité non implémentée).</li>
+        <li><strong>get_clipboard</strong> : Copie le contenu du presse-papiers (fonctionnalité non implémentée).</li>
+        <li><strong>keylogger</strong> : Récupère les frappes clavier.</li>
+        <li><strong>samdb</strong> : Tente de récupérer le fichier samdb (nécessite des privilèges administratifs).</li>
+        <li><strong>wbpass</strong> : Tente de récupérer tous les mots de passe des navigateurs web (fonctionnalité non implémentée).</li>
+        <li><strong>ls</strong> : Liste les fichiers dans le répertoire courant.</li>
+        <li><strong>ls_hidden</strong> : Liste les fichiers cachés.</li>
+        <li><strong>pwd</strong> : Affiche le répertoire de travail courant.</li>
+        <li><strong>cd</strong> : Change de répertoire.</li>
+        <li><strong>run</strong> &lt;programname&gt; : Exécute un programme.</li>
+        <li><strong>ps1</strong> &lt;programname&gt; : Exécute un programme PowerShell.</li>
+        <li><strong>download</strong> &lt;filename&gt; : Télécharge un fichier.</li>
+        <li><strong>upload</strong> &lt;filename&gt; : Télécharge un fichier vers le serveur de l'attaquant (fonctionnalité non implémentée).</li>
+        <li><strong>delete</strong> &lt;filename&gt; : Supprime un fichier.</li>
+        <li><strong>erase</strong> : Supprime tous les fichiers dans le répertoire courant.</li>
+        <li><strong>update</strong> : Met à jour le backdoor (fonctionnalité non implémentée).</li>
+        <li><strong>info</strong> : Affiche la description.</li>
+        <li><strong>quit</strong> : Quitte le serveur (le serveur reste actif).</li>
+        <li><strong>stop</strong> : Arrête le serveur.</li>
+    </ul>
+    </p>
+
+    <h2 class="projet-titles">Lien vers le projet</h2>
+    <p class="content">Consultez le dépôt GitHub de Space Revolution pour plus d'informations et pour accéder au code source :
+        <br><a class="projet-link" href="https://github.com/yourusername/retro-cloud" target="_blank">Zero Shell sur GitHub</a></p>
+</div>

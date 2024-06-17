@@ -14,7 +14,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
-    color: #333;
+    color: #343642;
 }
 
 .site-wrapper {
@@ -29,7 +29,7 @@ body {
 
 /* Styles pour l'en-tête */
 .site-header {
-    background-color: #333;
+    background-color: #343642;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -192,7 +192,7 @@ body {
 
 .category-tag_JV {
     display: inline-block;
-    background-color: #009d97; /* Background color of the tag */
+    background-color: #8CBEB2; /* Background color of the tag */
     color: #fff; /* Text color */
     padding: 5px 10px;
     margin-right: 5px; /* Space between tags */
@@ -202,7 +202,7 @@ body {
 
 .category-tag_W {
     display: inline-block;
-    background-color: #db813c; /* Background color of the tag */
+    background-color: #F3B562; /* Background color of the tag */
     color: #fff; /* Text color */
     padding: 5px 10px;
     margin-right: 5px; /* Space between tags */
@@ -212,7 +212,7 @@ body {
 
 .category-tag_APP {
     display: inline-block;
-    background-color: #456f56; /* Background color of the tag */
+    background-color: #F06060; /* Background color of the tag */
     color: #fff; /* Text color */
     padding: 5px 10px;
     margin-right: 5px; /* Space between tags */
@@ -222,7 +222,7 @@ body {
 
 .category-tag_SIM {
     display: inline-block;
-    background-color: #edad6e; /* Background color of the tag */
+    background-color: #A13323; /* Background color of the tag */
     color: #fff; /* Text color */
     padding: 5px 10px;
     margin-right: 5px; /* Space between tags */
@@ -232,7 +232,7 @@ body {
 
 .category-tag_LOG {
     display: inline-block;
-    background-color: #c225b5; /* Background color of the tag */
+    background-color: #AB8268; /* Background color of the tag */
     color: #fff; /* Text color */
     padding: 5px 10px;
     margin-right: 5px; /* Space between tags */
@@ -252,7 +252,7 @@ body {
 
 .category-tag_BD {
     display: inline-block;
-    background-color: #e2d118; /* Background color of the tag */
+    background-color: #765C5F; /* Background color of the tag */
     color: #fff; /* Text color */
     padding: 5px 10px;
     margin-right: 5px; /* Space between tags */
@@ -262,7 +262,7 @@ body {
 
 .category-tag_HR {
     display: inline-block;
-    background-color: #3ba30b; /* Background color of the tag */
+    background-color: #969C99; /* Background color of the tag */
     color: #fff; /* Text color */
     padding: 5px 10px;
     margin-right: 5px; /* Space between tags */
@@ -379,7 +379,7 @@ body {
 }
 
 .filter-btn.active {
-    background-color: #000000;
+    background-color: #343642;
     color: #fff;
 }
 
@@ -439,7 +439,7 @@ body {
 }
 
 .submit-button {
-    background-color: #333;
+    background-color: #343642;
     color: #fff;
     padding: 0.7rem 1.5rem;
     border: none;
@@ -460,7 +460,7 @@ body {
 
 /* Styles pour le pied de page */
 .site-footer {
-    background-color: #333;
+    background-color: #343642;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -714,7 +714,7 @@ span {
 }
 
 .dark-mode .site-main {
-    background-color: #333;
+    background-color: #343642;
     color: #fff;
 }
 
@@ -741,7 +741,7 @@ span {
 }
 
 .dark-mode .home-section {
-    background-color: #333;
+    background-color: #343642;
 }
 
 .dark-mode .section-title {
@@ -806,7 +806,7 @@ span {
 }
 
 .dark-mode .site-wrapper {
-    background-color: #333;
+    background-color: #343642;
 }
 
 .dark-mode .site-nav {
@@ -927,11 +927,11 @@ span {
     border-radius: 8px;
 }
 .projet h1 {
-    color: #333;
+    color: #343642;
     text-align: center;
 }
 .projet h2, h3 {
-    color: #333;
+    color: #343642;
 }
 .projet p.content {
     margin: 20px 0;
@@ -1003,7 +1003,7 @@ span {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
-    top: 0;
+    top:  0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -1016,7 +1016,7 @@ span {
 
 /* Style pour le contenu du modal */
 #myModal .modal-content {
-    top: 30%;
+    top: 10%;
     position: relative;
     background-color: rgba(0, 0, 0, 0.5);
     margin: auto;
@@ -1039,7 +1039,7 @@ span {
 #myModal #modalImage {
     border-radius: 20px;
     width: 100%; /* Full width */
-    height: auto; /* Maintain aspect ratio */
+    height: 100%; /* Maintain aspect ratio */
 }
 
 /* Style pour le bouton de fermeture */
@@ -1054,7 +1054,7 @@ span {
 
 #myModal .close:hover,
 #myModal .close:focus {
-    color: #ff8000;
+    color: #ff9a00;
     text-decoration: none;
     cursor: pointer;
 }
@@ -1081,6 +1081,24 @@ span {
 #gameCanvas {
     display: block;
     margin: 0 auto;
-    border: 2px solid #333;
+    border: 2px solid #343642;
     border-radius: 5px;
+}
+
+
+
+.cours_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    font-size: 3rem;
+    color: #0e5667;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cours_link:hover {
+    color: #ff9a00; /* Change color on hover */
+    transform: scale(1.05); /* Slightly increase the size */
 }
