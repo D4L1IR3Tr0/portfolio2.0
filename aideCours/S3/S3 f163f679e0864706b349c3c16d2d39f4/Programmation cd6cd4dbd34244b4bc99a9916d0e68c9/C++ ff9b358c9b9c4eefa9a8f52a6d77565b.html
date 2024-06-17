@@ -1,0 +1,1507 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>C++</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ff9b358c-9b9c-4eef-a9a8-f52a6d77565b" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_space_shuttle_challenger.jpg" style="object-position:center 6.259999999999999%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/snippet_gray.svg"/></div><h1 class="page-title">C++</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Propriétaire</th><td><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">d</span></span>damergi mohamed ali</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Étiquettes</th><td></td></tr></tbody></table></header><div class="page-body"><figure id="bcd81b33-a588-4c40-b617-6f10d2eaca92" class="link-to-page"><a href="C++%20ff9b358c9b9c4eefa9a8f52a6d77565b/Tableau%20Dynamique%20bcd81b33a5884c40b6176f10d2eaca92.html"><img class="icon" src="https://www.notion.so/icons/grid-dense_gray.svg"/>Tableau Dynamique</a></figure><figure id="f4dee677-18bd-4ecd-b9a6-bf5492911ffb" class="link-to-page"><a href="C++%20ff9b358c9b9c4eefa9a8f52a6d77565b/Liste%20f4dee67718bd4ecdb9a6bf5492911ffb.html"><img class="icon" src="https://www.notion.so/icons/list-indent_gray.svg"/>Liste</a></figure><figure id="bb70a178-b905-4244-866e-0937a2751d90" class="link-to-page"><a href="C++%20ff9b358c9b9c4eefa9a8f52a6d77565b/Trieur%20de%20dates%20et%20affichage%20de%20l%E2%80%99age%20bb70a178b9054244866e0937a2751d90.html"><img class="icon" src="https://www.notion.so/icons/calendar-day_gray.svg"/>Trieur de dates et affichage de l’age</a></figure><figure id="c020bf02-0aa0-430b-a926-20ff61608bda" class="link-to-page"><a href="C++%20ff9b358c9b9c4eefa9a8f52a6d77565b/Ensemble%20(Exam%202022%202023)%20c020bf020aa0430ba92620ff61608bda.html"><img class="icon" src="https://www.notion.so/icons/mathematics_gray.svg"/>Ensemble (Exam 2022/2023)</a></figure><figure id="5096f671-d3e4-40f0-ae54-d93ae3b08e2c" class="link-to-page"><a href="C++%20ff9b358c9b9c4eefa9a8f52a6d77565b/AjouterElement%20avec%20fraction%20(Exam%202022%202023)%205096f671d3e440f0ae54d93ae3b08e2c.html"><img class="icon" src="https://www.notion.so/icons/new-document_gray.svg"/>AjouterElement avec fraction (Exam 2022/2023)</a></figure><figure id="0b408c52-6c02-48a8-8a14-3c99375d0f9b" class="link-to-page"><a href="C++%20ff9b358c9b9c4eefa9a8f52a6d77565b/File%20prioritaire%20(Exam%202021%202022)%200b408c526c0248a88a143c99375d0f9b.html"><img class="icon" src="https://www.notion.so/icons/arrow-right-line_gray.svg"/>File prioritaire (Exam 2021/2022)</a></figure><figure id="f7382616-5a60-467e-90a3-1a20be78705a" class="link-to-page"><a href="C++%20ff9b358c9b9c4eefa9a8f52a6d77565b/Antiseche%20ABR%20TDy%20Questions%20f73826165a60467e90a31a20be78705a.html"><img class="icon" src="https://www.notion.so/icons/ghost_gray.svg"/>Antiseche ABR TDy Questions</a></figure><p id="eb3e9957-875a-4cf9-82b3-d20b9c9c475d" class="">
+</p><h2 id="aa37e726-f3d5-4349-8f5a-4f3ba7dd36b0" class="">Variables</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4fa98116-6948-4115-8604-ff1bdb1bd0c0" class="code"><code class="language-C++">
+// les plus importants
+
+int entier;
+unsigned int entierPositif;
+float reelSymple;
+double reelDouble;
+
+char caractere;
+...</code></pre><h3 id="260495bd-4090-424f-9a9e-3e8a72ffcca5" class="">Pointeurs</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="42a9792e-721e-4a87-9070-57f1cc8f3c7d" class="code"><code class="language-C++">#include &lt;iostream&gt;
+
+void test (int x, int &amp;y){ // x par copie et y par refference
+    x *=x;
+    y*=y;
+}
+
+int main() {
+
+    int a = 2;
+    int b = 5;
+    int c = 10;
+
+    int *ptra; //declaration du pointeur
+    ptra = &amp;a; // affectation de l&#x27;adresse de a au pointeur
+
+    std::cout &lt;&lt; a &lt;&lt; &quot;-&quot; &lt;&lt; ptra &lt;&lt; std::endl;
+    *ptra +=2;
+    std::cout &lt;&lt; a &lt;&lt; &quot;-&quot; &lt;&lt; ptra &lt;&lt; std::endl;
+    *ptra = *ptra +2;
+    std::cout &lt;&lt; a &lt;&lt; &quot;-&quot; &lt;&lt; ptra &lt;&lt; std::endl&lt;&lt; std::endl;
+    ptra+=100;
+
+    std::cout &lt;&lt; *ptra &lt;&lt; &quot;-&quot; &lt;&lt; ptra &lt;&lt; std::endl &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;on voit que a la derniere ligne *ptra ne s&#x27;affiche pas correctement \n&quot;
+                 &quot;car on a modifier la valeur de ptra et ducoup celle ci \n&quot;
+                 &quot;ne pointe plus sur a&quot; &lt;&lt; std::endl &lt;&lt; std::endl;
+
+
+
+    std::cout &lt;&lt; &quot;dans cette deuxiemme experience on va utiliser une fonction test\n&quot;
+                 &quot;qui prend deux entier et qui calcule leurs carré \n&quot;
+                 &quot;cette fonction est de type void et les deux entier l&#x27;un est passé\n&quot;
+                 &quot;par refrence et l&#x27;autre est juste recopié\n\n&quot;;
+    std::cout &lt;&lt;&quot;b et c avant test &quot; &lt;&lt; b &lt;&lt; &quot;-&quot; &lt;&lt; c &lt;&lt; std::endl;
+    test(b,c);
+    std::cout &lt;&lt;&quot;b et c apres test &quot; &lt;&lt; b &lt;&lt; &quot;-&quot; &lt;&lt; c &lt;&lt; std::endl;
+
+    std::cout &lt;&lt; &quot;\non remarque que b a été recopié et donc pas modifiée a la fin\n&quot;
+                 &quot;de notre fonction test et que c a bien étée modifiée car passée par reference\n\n&quot;;
+}</code></pre><h3 id="7c775f30-db35-4c6b-9b2c-930a77e8a844" class="">Objets</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2d748fe4-0569-4586-af9f-35da6df66389" class="code"><code class="language-C++">#include &lt;iostream&gt;
+
+class date{
+private:
+    int j;
+    int m;
+    int a;
+public:
+
+    date(){ //constructeur vide
+    }
+    date(int x, int y, int z){ //constructeur classique
+            j = x;
+            m = y;
+            a = z;
+    }
+
+    void saisir(){ // saisie d&#x27;une date
+        do {
+            std::cout &lt;&lt; &quot;entrer le jour :&quot;;
+            std::cin &gt;&gt; j;
+            std::cout &lt;&lt; &quot;entrer le mois :&quot;;
+            std::cin &gt;&gt; m;
+            std::cout &lt;&lt; &quot;entrer l&#x27;année :&quot;;
+            std::cin &gt;&gt; a;
+            if (j &lt; 0 || j &gt; 30) { std::cout &lt;&lt; &quot;format invalide\n&quot;; } // verification du format du jour
+            if (m &lt; 0 || m &gt; 12) { std::cout &lt;&lt; &quot;format invalide\n&quot;; } //  verification du format du mois
+        }while((j &lt; 0 || j &gt; 30)||(m &lt; 0 || m &gt; 12));
+    }
+
+    void affiche() const{ // affichage d&#x27;une date
+        std::cout &lt;&lt; j &lt;&lt;&quot; - &quot; &lt;&lt; m &lt;&lt; &quot; - &quot; &lt;&lt;a &lt;&lt; std::endl;
+    }
+
+};
+
+int main() {
+
+date nouvelleDate; // declaration de l&#x27;objet nouvelleDate de type date
+
+    date dateconstructeur(35,04,1998); // declaration de l&#x27;objet avec un constructeur
+
+date * dateSurLeTas = new date; // declaration de l&#x27;objet nouvelleDate de type date sur le tas
+
+date tableauDates[10]; // declaration d&#x27;un tableau de dates
+
+nouvelleDate.saisir();
+nouvelleDate.affiche();
+
+dateconstructeur.affiche();
+
+    dateSurLeTas-&gt;saisir();
+    dateSurLeTas-&gt;affiche();
+
+    for(int i;i&lt;10;i++){
+        tableauDates[i].saisir();
+    }
+    for(int i;i&lt;10;i++){
+        tableauDates[i].affiche();
+    }
+    delete dateSurLeTas;
+
+    return 0;
+}</code></pre><h3 id="3eedd505-2a8f-4ed2-9a18-9228fc65fea6" class="">Surcharge</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0708d99f-7d5d-4837-af4e-b566a947ccf5" class="code"><code class="language-C++">#include &lt;iostream&gt;
+
+class date{
+private:
+    int j;
+    int m;
+    int a;
+public:
+
+    date(){}
+    date(int x, int y, int z){ //constructeur classique
+            j = x;
+            m = y;
+            a = z;
+    }
+
+    date operator+(const date&amp; add) { // surcharg de + pour additionner deux dates
+        date result(j + add.j, m + add.m, a + add.a);
+        return result;
+    }
+    date operator-(const date&amp; add) { // surcharge de - pour soustraire deux dates
+        date result(j - add.j, m - add.m, a - add.a);
+        return result;
+    }
+date operator++(int) {
+        date result(j, m, a);
+        j += 1;
+        return result;
+    }
+
+    void affiche(){ // affichage d&#x27;une date
+        std::cout &lt;&lt; j &lt;&lt;&quot; - &quot; &lt;&lt; m &lt;&lt; &quot; - &quot; &lt;&lt;a &lt;&lt; std::endl;
+    }
+
+};
+
+int main() {
+    date date1(10,04,2020);
+    date date2(14,04,1998);
+
+    date addDate = date1+date2;
+    date sousDate = date1-date2;
+
+    addDate.affiche();
+    sousDate.affiche();
+
+    return 0;
+}</code></pre><h3 id="790ab100-7771-484e-a539-c51a48f8d46b" class="">Tri par Selection (<mark class="highlight-red">Complexité n^2</mark>)</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d852c2da-c270-4182-b26e-1e8646188eee" class="code"><code class="language-C++">#include &lt;iostream&gt;
+
+using namespace std;
+
+class date {
+public:
+    int jour, mois, annee;
+
+    date(int j, int m, int a) : jour(j), mois(m), annee(a) {}
+
+    void affiche() const {
+        cout &lt;&lt; jour &lt;&lt; &quot; - &quot; &lt;&lt; mois &lt;&lt; &quot; - &quot; &lt;&lt; annee;
+    }
+
+    bool operator&lt;(const date&amp; inf) const {
+        if (annee &lt; inf.annee) return true;
+        if (annee &gt; inf.annee) return false;
+        if (mois &lt; inf.mois) return true;
+        if (mois &gt; inf.mois) return false;
+        return jour &lt; inf.jour;
+    }
+};
+
+
+/*
+ Lorsque vous passez un tableau à une fonction en C++, même si vous n&#x27;utilisez pas une référence explicite,
+ en réalité, le tableau est toujours passé par référence. Cela signifie que toute modification apportée au
+ tableau à l&#x27;intérieur de la fonction se répercute sur le tableau d&#x27;origine dans la fonction appelante.
+ */
+
+
+void tri(date t[], int n) {
+    int indmin;
+    date min(0, 0, 0);
+    for (int i = 0; i &lt; n; i++) {
+        indmin = i;
+        for (int j = i + 1; j &lt; n; j++) {
+            if (t[j] &lt; t[indmin]) {
+                indmin = j;
+            }
+        }
+        min = t[indmin];
+        t[indmin] = t[i];
+        t[i] = min;
+    }
+}
+
+int main() {
+    int n = 2;
+    date tabDate[] = {{14, 04, 1998}, {12, 02, 1995}};
+
+
+    std::cout &lt;&lt; &quot;Avant tri : &quot;&lt;&lt; std::endl;
+    for (int i = 0; i &lt; n; i++) {
+        tabDate[i].affiche();
+        cout &lt;&lt; endl;
+    }
+
+    tri(tabDate,n);
+
+    std::cout &lt;&lt; &quot;apres tri : &quot;&lt;&lt; std::endl;
+    for (int i = 0; i &lt; n; i++) {
+        tabDate[i].affiche();
+        cout &lt;&lt; endl;
+    }
+
+    return 0;
+}</code></pre><h3 id="1a936a73-7efe-4502-a2c0-7cc3c958f9be" class="">Tri fusion</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="918883de-5e22-4184-ad21-411de42138bc" class="code"><code class="language-C++">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+// Fonction pour fusionner deux sous-listes triées
+void merge(std::vector&lt;int&gt;&amp; arr, int left, int mid, int right) {
+    // Calculer la taille des deux sous-listes
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    // Créer des sous-listes temporaires
+    std::vector&lt;int&gt; leftArr(n1);
+    std::vector&lt;int&gt; rightArr(n2);
+
+    // Copier les éléments dans les sous-listes temporaires
+    for (int i = 0; i &lt; n1; i++)
+        leftArr[i] = arr[left + i];
+    for (int j = 0; j &lt; n2; j++)
+        rightArr[j] = arr[mid + 1 + j];
+
+    // Fusionner les sous-listes en ordre
+    int i = 0, j = 0, k = left;
+    while (i &lt; n1 &amp;&amp; j &lt; n2) {
+        if (leftArr[i] &lt;= rightArr[j]) {
+            arr[k] = leftArr[i];
+            i++;
+        } else {
+            arr[k] = rightArr[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copier les éléments restants, s&#x27;il y en a
+    while (i &lt; n1) {
+        arr[k] = leftArr[i];
+        i++;
+        k++;
+    }
+    while (j &lt; n2) {
+        arr[k] = rightArr[j];
+        j++;
+        k++;
+    }
+}
+
+// Fonction de tri fusion
+void mergeSort(std::vector&lt;int&gt;&amp; arr, int left, int right) {
+    if (left &lt; right) {
+        // Trouver le point médian du tableau
+        int mid = left + (right - left) / 2;
+
+        // Trier récursivement les deux moitiés
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+
+        // Fusionner les moitiés triées
+        merge(arr, left, mid, right);
+    }
+}
+
+int main() {
+    std::vector&lt;int&gt; arr = {12, 11, 13, 5, 6, 7};
+    int arrSize = arr.size();
+
+    std::cout &lt;&lt; &quot;Tableau non trié : &quot;;
+    for (int i = 0; i &lt; arrSize; i++) {
+        std::cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    // Appeler la fonction mergeSort pour trier le tableau
+    mergeSort(arr, 0, arrSize - 1);
+
+    std::cout &lt;&lt; &quot;Tableau trié : &quot;;
+    for (int i = 0; i &lt; arrSize; i++) {
+        std::cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre><h3 id="cfdcddb5-001a-433d-b00e-cff0c75264a6" class="">Tri insertion</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="225a619d-14e3-4002-a54d-0322865d65ca" class="code"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+void triInsertion(std::vector&lt;int&gt;&amp; tableau) {
+    int n = tableau.size();
+
+    for (int i = 1; i &lt; n; i++) {
+        int cle = tableau[i];
+        int j = i - 1;
+
+        // Déplace les éléments du tableau qui sont plus grands que la clé
+        // vers la droite d&#x27;une position.
+        while (j &gt;= 0 &amp;&amp; tableau[j] &gt; cle) {
+            tableau[j + 1] = tableau[j];
+            j--;
+        }
+
+        tableau[j + 1] = cle;
+    }
+}
+
+int main() {
+    std::vector&lt;int&gt; tableau = {12, 11, 13, 5, 6};
+
+    std::cout &lt;&lt; &quot;Tableau non trié : &quot;;
+    for (int i : tableau) {
+        std::cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    triInsertion(tableau);
+
+    std::cout &lt;&lt; &quot;Tableau trié : &quot;;
+    for (int i : tableau) {
+        std::cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre><h3 id="0fd0c3d1-fa0b-46a3-bfbd-0dc852050aa9" class="">Tableau Dynamique</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c5220807-9ddb-47cc-934d-53a45d626e28" class="code"><code class="language-C++">#include &lt;iostream&gt;
+using namespace std;
+
+class date {
+public:
+    int jour, mois, annee;
+
+    date() : jour(0), mois(0), annee(0) {}
+    date(int j, int m, int a) : jour(j), mois(m), annee(a) {}
+
+    void affiche() const {
+        cout &lt;&lt; jour &lt;&lt; &quot; - &quot; &lt;&lt; mois &lt;&lt; &quot; - &quot; &lt;&lt; annee;
+    }
+
+    bool operator&lt;(const date&amp; inf) const {
+        if (annee &lt; inf.annee) return true;
+        if (annee &gt; inf.annee) return false;
+        if (mois &lt; inf.mois) return true;
+        if (mois &gt; inf.mois) return false;
+        return jour &lt; inf.jour;
+    }
+};
+
+class tabDynamique {
+    date *ad;
+    int taille;
+    int tailleUtilisee;
+
+public:
+    tabDynamique() : ad(new date[1]), taille(1), tailleUtilisee(0) {}
+
+    tabDynamique(int n) : ad(new date[n]), taille(n), tailleUtilisee(0) {}
+
+    void ajouterElement(date x) {
+        if (tailleUtilisee == taille) {
+            date *temp = ad;
+            ad = new date[2* taille];
+            taille *= 2;
+            for (int i = 0; i &lt; tailleUtilisee; i++) ad[i] = temp[i];
+            delete[] temp;
+        }
+
+            ad[tailleUtilisee] = x;
+            tailleUtilisee++;
+        
+    }
+
+    date valeurElement(int indice) const {
+        return ad[indice];
+    }
+
+    void modifierValeurElement(date x, int indice) {
+        ad[indice] = x;
+    }
+
+    void supprimerElement(int indice) {
+        for (int i = indice; i &lt; tailleUtilisee - 1; i++) {
+            ad[i] = ad[i + 1];
+        }
+        tailleUtilisee--;
+    }
+
+    void afficher() const {
+        for (int i = 0; i &lt; tailleUtilisee; i++) {
+            cout&lt;&lt;endl;
+            ad[i].affiche();
+            cout&lt;&lt;endl;
+        }
+    }
+
+    void insererElement(date x, int indice) {
+        if (indice &gt; tailleUtilisee) {
+            ajouterElement(x);
+        } else {
+            date *temp = ad;
+            ad = new date[taille + 1];
+            taille++;
+            for (int i = 0; i &lt; indice; i++) {
+                ad[i] = temp[i];
+            }
+            ad[indice] = x;
+            for (int i = indice + 1; i &lt; taille; i++) {
+                ad[i] = temp[i - 1];
+            }
+            delete[] temp;
+        }
+        tailleUtilisee++;
+    }
+};
+
+int main() {
+    int taille;
+    int jour, mois,annee;
+
+    cout &lt;&lt; &quot;quelle taille voulez vous utiliser pour le tableau ? : &quot;;
+    cin &gt;&gt; taille;
+    tabDynamique tableau(taille);
+
+    for(int i=0; i &lt; taille; i++){
+        cout&lt;&lt; &quot;case &quot; &lt;&lt; i &lt;&lt; &quot; : \n&quot;;
+        cout &lt;&lt;&quot;jour :&quot;;
+        cin &gt;&gt; jour;
+        cout &lt;&lt;&quot;mois :&quot;;
+        cin &gt;&gt; mois;
+        cout &lt;&lt;&quot;annee :&quot;;
+        cin &gt;&gt; annee;
+        date temp(jour,mois,annee);
+        tableau.ajouterElement(temp);
+    }
+
+    cout &lt;&lt; endl;
+    tableau.afficher();
+    cout &lt;&lt; endl;
+
+
+    tableau.insererElement(date(4, 4, 2022), 1);
+    tableau.afficher();
+    cout &lt;&lt; endl;
+
+    tableau.supprimerElement(1);
+    tableau.afficher();
+    cout &lt;&lt; endl;
+
+    return 0;
+}</code></pre><h3 id="0fc6badd-5f4e-4f8c-9470-0c82a51a0c34" class="">Liste simplement chainée</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="aa301700-5d14-4472-97e4-0947198f69fb" class="code"><code class="language-C++">#include &lt;iostream&gt;
+
+using namespace std;
+
+class Cellule {
+public:
+    int info;
+    Cellule* suivant;
+
+    Cellule(int info, Cellule* suivant = NULL) {
+        this-&gt;info = info;
+        this-&gt;suivant = suivant;
+    }
+};
+
+class Liste {
+private:
+    Cellule* ad;
+
+public:
+    Liste() : ad(nullptr) {}
+
+
+    void ajouter(int info) {
+        Cellule* nouvelleCellule = new Cellule(info, ad);
+        ad = nouvelleCellule;
+    }
+
+
+    void afficher() {
+        Cellule* compteur = ad;
+        while (compteur != nullptr) {
+            cout &lt;&lt; compteur-&gt;info &lt;&lt; &quot; &quot;;
+            compteur = compteur-&gt;suivant;
+        }
+        cout &lt;&lt; endl;
+    }
+
+
+    void vider() {
+        while (ad != nullptr) {
+            Cellule* temp = ad;
+            ad = ad-&gt;suivant;
+            delete temp;
+        }
+    }
+
+    
+    ~Liste() {
+        vider();
+    }
+};
+
+int main() {
+    Liste maListe;
+
+    maListe.ajouter(3);
+    maListe.ajouter(2);
+    maListe.ajouter(1);
+
+    maListe.afficher();
+
+    // N&#x27;oubliez pas de libérer la mémoire occupée par la liste
+    maListe.vider();
+
+    return 0;
+}</code></pre><h3 id="43da289c-8f6f-4aee-b5a0-5e6a3675cbfb" class="">Piles</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="247441be-1434-4275-bff9-b2614728042b" class="code"><code class="language-C++">#include &lt;iostream&gt;
+using namespace std;
+
+class date {
+public:
+    int jour, mois, annee;
+
+    date() : jour(0), mois(0), annee(0) {}
+    date(int j, int m, int a) : jour(j), mois(m), annee(a) {}
+
+    void affiche() const {
+        cout &lt;&lt; jour &lt;&lt; &quot; - &quot; &lt;&lt; mois &lt;&lt; &quot; - &quot; &lt;&lt; annee;
+    }
+
+    bool operator&lt;(const date&amp; inf) const {
+        if (annee &lt; inf.annee) return true;
+        if (annee &gt; inf.annee) return false;
+        if (mois &lt; inf.mois) return true;
+        if (mois &gt; inf.mois) return false;
+        return jour &lt; inf.jour;
+    }
+};
+
+class pile {
+public:
+    date *ad;
+    int taille;
+    int indicedernier;
+
+public:
+
+    pile() : ad(new date[1]), taille(1), indicedernier(0) {}
+
+    pile(int n) : ad(new date[n]), taille(n), indicedernier(0) {}
+
+    void empiler(date x) {
+        if (indicedernier == taille) {
+            date *temp = ad;
+            ad = new date[2 * taille];
+            taille *= 2;
+            for (int i = 0; i &lt; indicedernier; i++) {
+                ad[i] = temp[i];
+            }
+            delete[] temp;
+        }
+
+            ad[indicedernier] = x;
+            indicedernier++;
+
+    }
+
+    void depiler() {
+        if (indicedernier &gt; 0) {
+						ad[indicedernier] = NULL;
+            indicedernier--;
+						
+        }
+    }
+
+    void afficher() const {
+        for (int i = indicedernier - 1; i &gt;= 0; i--) {
+            cout &lt;&lt; endl;
+            cout &lt;&lt; i &lt;&lt; &quot; =&gt; [ &quot;;
+            ad[i].affiche();
+            cout &lt;&lt;&quot; ]&quot; &lt;&lt; endl;
+            cout &lt;&lt; endl;
+        }
+    }
+
+    void estvide() const{
+        if(indicedernier == 0){
+            cout &lt;&lt;&quot;la pile est vide \n&quot;;
+        }else{
+            cout &lt;&lt; &quot;la pile n&#x27;est pas vide \n&quot;;
+            afficher();
+        }
+    }
+
+    void vider(){
+        for(int i=0;i&lt;taille;i++){
+            depiler();
+        }
+    }
+};
+
+int main() {
+    pile pile1;
+
+    pile1.empiler(date(14,04,1998));
+    pile1.empiler(date(19,12,2000));
+    pile1.empiler(date(30,12,2003));
+    pile1.empiler(date(14,11,2002));
+
+    pile1.afficher();
+
+    cout &lt;&lt; &quot;_________ \n&quot;;
+
+    pile1.depiler();
+    pile1.afficher();
+    cout &lt;&lt; &quot;_________ \n&quot;;
+    pile1.depiler();
+
+    pile1.estvide();
+    cout &lt;&lt; &quot;_________ \n&quot;;
+    pile1.vider();
+    pile1.estvide();
+    return 0;
+}</code></pre><h3 id="9378b1e6-87cd-48e4-95a4-ea420ad7e162" class="">File</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="156c93e4-3755-4cc8-a381-1ffcde82f0bd" class="code"><code class="language-C++"></code></pre><h3 id="b652f20e-fa76-4dee-bcf8-5f2a39bb27b8" class="">Arbre binaire de recherche</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1bef0889-0936-4582-b534-fea99c9e190b" class="code"><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+
+using namespace std;
+
+// Déclaration de la classe ElementA
+class ElementA {
+    // Ajoutez les détails nécessaires ici
+};
+
+// Déclaration de la classe Noeud
+class Noeud {
+public:
+    ElementA info;
+    Noeud* fg;
+    Noeud* fd;
+
+    // Constructeur de Noeud
+    Noeud(const ElementA&amp; e) : info(e), fg(nullptr), fd(nullptr) {}
+};
+
+// Déclaration de la classe Arbre
+class Arbre {
+private:
+    Noeud* adRacine;
+
+public:
+    // Constructeur de la classe Arbre
+    Arbre() : adRacine(nullptr) {}
+
+    // Destructeur de la classe Arbre (à ajouter si nécessaire)
+    ~Arbre() {
+        vider();
+    }
+
+    bool estVide() const {
+        return adRacine == nullptr;
+    }
+
+    void vider() {
+        // Implémentez la fonction pour vider l&#x27;arbre
+        // ...
+
+        // Exemple basique :
+        // Appeler une fonction récursive pour supprimer tous les nœuds
+        viderRecursive(adRacine);
+
+        // Assurez-vous de mettre à jour adRacine
+        adRacine = nullptr;
+    }
+
+    void viderRecursive(Noeud* noeud) {
+        if (noeud != nullptr) {
+            viderRecursive(noeud-&gt;fg);
+            viderRecursive(noeud-&gt;fd);
+            delete noeud;
+        }
+    }
+
+    void insererElement(ElementA e) {
+        adRacine = insererElementRecursive(adRacine, e);
+    }
+
+    Noeud* insererElementRecursive(Noeud* noeud, ElementA e) {
+        if (noeud == nullptr) {
+            return new Noeud(e);
+        }
+
+        if (e &lt; noeud-&gt;info) {
+            noeud-&gt;fg = insererElementRecursive(noeud-&gt;fg, e);
+        } else if (e &gt; noeud-&gt;info) {
+            noeud-&gt;fd = insererElementRecursive(noeud-&gt;fd, e);
+        }
+
+        return noeud;
+    }
+
+    void supprimerElement(ElementA e) {
+        adRacine = supprimerElementRecursive(adRacine, e);
+    }
+
+    Noeud* supprimerElementRecursive(Noeud* noeud, ElementA e) {
+        if (noeud == nullptr) {
+            return nullptr;
+        }
+
+        if (e &lt; noeud-&gt;info) {
+            noeud-&gt;fg = supprimerElementRecursive(noeud-&gt;fg, e);
+        } else if (e &gt; noeud-&gt;info) {
+            noeud-&gt;fd = supprimerElementRecursive(noeud-&gt;fd, e);
+        } else {
+            // Noeud à supprimer trouvé
+
+            if (noeud-&gt;fg == nullptr) {
+                Noeud* temp = noeud-&gt;fd;
+                delete noeud;
+                return temp;
+            } else if (noeud-&gt;fd == nullptr) {
+                Noeud* temp = noeud-&gt;fg;
+                delete noeud;
+                return temp;
+            }
+
+            // Noeud avec deux enfants
+            Noeud* successeur = trouverMin(noeud-&gt;fd);
+            noeud-&gt;info = successeur-&gt;info;
+            noeud-&gt;fd = supprimerElementRecursive(noeud-&gt;fd, successeur-&gt;info);
+        }
+
+        return noeud;
+    }
+
+    Noeud* trouverMin(Noeud* noeud) {
+        while (noeud-&gt;fg != nullptr) {
+            noeud = noeud-&gt;fg;
+        }
+        return noeud;
+    }
+
+    Noeud* rechercherElement(ElementA e) const {
+        return rechercherElementRecursive(adRacine, e);
+    }
+
+    Noeud* rechercherElementRecursive(const Noeud* noeud, ElementA e) const {
+        if (noeud == nullptr || noeud-&gt;info == e) {
+            return const_cast&lt;Noeud*&gt;(noeud);
+        }
+
+        if (e &lt; noeud-&gt;info) {
+            return rechercherElementRecursive(noeud-&gt;fg, e);
+        } else {
+            return rechercherElementRecursive(noeud-&gt;fd, e);
+        }
+    }
+
+    void afficherParcoursInfixe() const {
+        afficherParcoursInfixeRecursive(adRacine);
+        cout &lt;&lt; endl;
+    }
+
+    void afficherParcoursInfixeRecursive(const Noeud* noeud) const {
+        if (noeud != nullptr) {
+            afficherParcoursInfixeRecursive(noeud-&gt;fg);
+            cout &lt;&lt; noeud-&gt;info &lt;&lt; &quot; &quot;;
+            afficherParcoursInfixeRecursive(noeud-&gt;fd);
+        }
+    }
+
+    void afficherParcoursEnLargeur() const {
+        if (adRacine == nullptr) {
+            return;
+        }
+
+        queue&lt;const Noeud*&gt; file;
+        file.push(adRacine);
+
+        while (!file.empty()) {
+            const Noeud* noeud = file.front();
+            file.pop();
+
+            cout &lt;&lt; noeud-&gt;info &lt;&lt; &quot; &quot;;
+
+            if (noeud-&gt;fg != nullptr) {
+                file.push(noeud-&gt;fg);
+            }
+
+            if (noeud-&gt;fd != nullptr) {
+                file.push(noeud-&gt;fd);
+            }
+        }
+
+        cout &lt;&lt; endl;
+    }
+};
+
+// Exemple d&#x27;utilisation
+int main() {
+    Arbre monArbre;
+
+    monArbre.insererElement(ElementA(/* initialiser votre objet ElementA ici */));
+    // Ajouter d&#x27;autres éléments au besoin
+
+    monArbre.afficherParcoursInfixe();
+    monArbre.afficherParcoursEnLargeur();
+
+    return 0;
+}</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

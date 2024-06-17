@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Anglais</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dfef64a8-e74d-4fc3-8a02-e8ac496702d3" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_vincent_van_gogh_cradle.jpg" style="object-position:center 80%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/chess-queen_gray.svg"/></div><h1 class="page-title">Anglais</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Propriétaire</th><td><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">d</span></span>damergi mohamed ali</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Étiquettes</th><td></td></tr></tbody></table></header><div class="page-body"><h2 id="f859e53c-37cb-4f18-b0e1-98fdff696578" class="">Projet Poster</h2><figure id="b5327755-a59c-498c-9b4b-912597085a77"><div class="source"><a href="Anglais%20dfef64a8e74d4fc38a02e8ac496702d3/ProjetAnglais.pdf">https://prod-files-secure.s3.us-west-2.amazonaws.com/4095c362-a080-4267-9781-185259456061/3b0b1624-b5f9-4f1c-8787-9b344686e9b8/ProjetAnglais.pdf</a></div></figure><h2 id="6d7e717d-14a1-481e-a771-584b9a434608" class="">Essais sur la vision du futur dans les films</h2><p id="95abd48b-703e-4c59-b211-b48c8a6fb271" class="">In the realm of science fiction, robotics often takes center stage, captivating audiences with portrayals that straddle the line between imagination and reality. In the cyberpunk genre, robotics becomes a focal point, offering a vision of the future where advanced technology blurs the line between man and machine. Examining prominent examples from films like &quot;Blade Runner&quot; and &quot;Ghost in the Shell,&quot; it becomes evident that the representation of robotics in these narratives is not entirely realistic but serves as a captivating exploration of the potential consequences of technological advancement.</p><p id="2e1b440c-1c80-4552-a4d9-a10c5bb3e606" class="">If we delve into the portrayal of humanoid robots, such as the replicants in &quot;Blade Runner,&quot; one must acknowledge the cinematic exaggeration for dramatic effect. While these creations possess remarkable human-like qualities. If robotics were to advance to such a degree, ethical concerns surrounding artificial intelligence and autonomy might arise, presenting potential challenges that need to be addressed.</p><p id="62bc00d6-4f84-4673-b124-f3799d73c405" class="">Moreover, the amalgamation of man and machine in &quot;Ghost in the Shell&quot; raises intriguing possibilities but also prompts questions about the feasibility of such integration.<strong> </strong>The notion that individuals &quot;should&quot; or &quot;ought to&quot; enhance themselves with cybernetic components introduces ethical dilemmas that, if realized, would necessitate careful consideration and regulation.</p><p id="6c69bd88-6d17-4faa-ab02-71d9af925dce" class="">In broader terms, when considering the representation of robotics in various movie genres, it becomes apparent that while these depictions offer imaginative glimpses into possible technological futures, the realism of such portrayals remains speculative.</p><p id="3434d316-eedc-4284-89b5-3cd6bd8ebffe" class="">
+</p><h2 id="86408539-3a11-4a27-8508-3e1e7d2e5da8" class="">Essais sur le transhumanisme</h2><p id="eeb782eb-3542-4941-9ac5-cc8528408c7d" class="">Transhumanism Is it a grace or a poisoned gift ?</p><p id="3b31956b-31f1-4079-b333-32d885b1069b" class="">the word “<em>transhumanism</em>” has been used for the first time by Julian Huxley, a well-known biologist, Firs director of the Unesco and founder of the World Wildlife Fund (WWF) in 1957: who said</p><p id="40084061-5daf-420f-b15a-f2b4742a82b0" class="">“ The human species can, if it wishes, transcend itself […]; Perhaps transhumanism will serve: man remaining man, but transcending himself, by realizing new possibilities of and for his human nature. ”</p><p id="606e41e9-f39c-4e18-ab2a-3d83e4dac222" class="">So what does it mean ?</p><p id="86fbad9a-9968-4e21-aaae-3c017f34d479" class="">Wikipedia present Transhumanism as a philosophical movement, the proponents of which advocate and predict the enhancement of the human condition by developing and making widely available sophisticated technologies able to greatly enhance longevity, mood and cognitive abilities.</p><p id="47accf45-1ba5-4c36-88a1-3e0cec66909c" class="">But this is too scientific, let me explain it my way :</p><p id="c920b055-6d56-4565-8ca1-258d1e297949" class="">several years ago a man who lost his leg will replace it by a wood made leg,</p><p id="bf0bd690-3f0b-44dd-ac54-f48c1d10457f" class="">few years ago he will replace it by a realistic looking leg made of plastic,</p><p id="270bc413-e570-48c1-8c34-63b86359ca96" class="">today he will replace it by a sophisticated and fully functional bionic leg that look and act exactly like a normal leg</p><p id="258ed8c0-dcd7-47c5-a3ec-2d75e8fc0d26" class="">but what about a future where this artificial leg will exceed the real one so that every human will willingly, and even if he have his two functional leg, change his biological leg with an artificial one ?</p><p id="e5f1dc7e-8624-4bdd-8380-2cd4f8e0ced8" class="">And. In this exemple we are just speaking about a leg but what about other members ? What about a lung that will make you breath under water ? What about an eye that make you see over kilometers away or a back that will be so strong that you will be able to lift a car with no trouble ?</p><p id="26c3a2da-87be-4639-81ae-fa6cb11fdf91" class="">A world where inspector gadget will juste be considered as an average person.</p><p id="23607507-593a-41ac-ab23-695a53dfe220" class="">it&#x27;s crazy isn&#x27;t it ? but not that crazy</p><p id="541689a8-8e75-4a62-9c84-0425f8c389b7" class="">this desire to acquire new capacities is not new.</p><p id="e4290fc7-db43-442b-9c66-a9eb2dffd8f8" class="">As early as 18th and 19th centuries, we begin to trace the idea that human organism can be improved using technology. Philosophers, politicians, scientists of the Enlightenment already show an ardent desire to expand mankind’s capacities. Charles Darwin with its “Origin of Species”, Friedrich Nietzsche with the concept of “the overman” and even Mary Shelley whith “Frankenstein”</p><p id="d55f65f7-bbaf-49c0-8efd-afbf76e01a67" class="">They all suggest the possibility of technological transformation of humankind and explore how these changes could alter the human condition.</p><p id="60dfd727-9647-4328-afdf-197d9f58dee7" class="">Later on, in the middle of WWI, WWII and the postwar era, transhumanist ideas in writings still provoked fascination. In fact, many people found a new hope of a societal change and genuinely considered that progress in space travel, computers and medicine offered a prospect of a better world.</p><p id="f6dd0a9a-577e-475b-84a4-76596ee7d37b" class="">In particular Aldous Huxley, Brother of Julian Huxley, who wrote Brave New World in 1932 and where he describe a dystopian society where humans are created in laboratories.</p><p id="42977297-e596-4c2b-bc69-2b286d9c9088" class="">By the way, fun fact, Andy Warhol once said that he wanted to be a machine, and that it would be a lot easier to be a machine because if something broke, you could just replace it.</p><p id="5155b97c-dc6f-454d-be81-dbd7cffb731b" class="">So why are people so reluctant to accept the transhumanist movement?</p><p id="e33bff95-b348-416e-98b5-8402cb5412c6" class="">Actually, several reasons can possibly explain that</p><p id="4316e369-c5ce-4300-9442-8881e5845c45" class="">First, the ethical way:</p><p id="0a60dab0-8741-4fe7-ae39-01607a1d5d24" class="">And one of the most actual and critical ethical reason concerns data privacy.</p><p id="e34be2ea-7232-4138-8295-b911c55e8ff7" class="">Overall, with the development of new technologies,</p><p id="5c894ca0-8b19-409e-b526-81433f399f52" class="">and it is even truer regarding the Internet, it becomes a real challenge to keep personal information private.</p><p id="acaebf94-28c0-4479-ac39-137e0b6af1db" class="">The transhumanist technologies are, by definition, intrusive in a person’s life at the highest level since they aim to be part of the human body. Consequently, it is relevant to consider the question of data protection when using these technologies.</p><p id="9961fc5d-67b7-41d1-936f-6d9b7e6de4f7" class="">And the most controversial issue about data privacy comes from a person’s health profile.</p><p id="a410de23-6577-4a85-b670-9d0a7288dd70" class="">Data about health is quite sensitive and private.</p><p id="f744c76e-ede2-495b-82c3-bdcb032720e4" class="">To some extension, we can imagine that insurance companies or pharmaceutical groups might be eager to have access to these files, especially the ones regarding genetic predisposition about illnesses or DNA sequencing.</p><p id="1115257d-7b77-4bc8-948e-425c98a567f6" class="">Another obstacle to the development of transhumanist technologies is the question of rising inequalities in a world where wealthy people can afford modifications to their body so they can run faster than cars without breaking a sweat. and where a normal person will just walk.</p><p id="14992aae-053c-4b5d-88b9-827969c8465a" class="">Nevertheless, it is easy for contradictors to pick an example such as mobile phones to oppose to that idea of inequalities :</p><p id="0a1948a8-d5e1-420b-8a1d-8f1d7e94bffa" class="">By saying that twenty years ago we believed that cell phones were going to be used only by politicians or businessmen. Nowadays almost everyone owns one, even in one of the most underdeveloped countries they have cell phones.</p><p id="30ac3a1a-46c6-4b07-bb7a-1f7296e26614" class="">Indeed technology also enables access to drinkable water, gives us the shoes that we wear and the food that we eat .</p><p id="6463fef3-c647-45df-9087-f61579fd6649" class="">but one thing is sure about technologies, they have always generated more and more inequalities.</p><p id="750bf71b-83dd-4b03-a68f-b9e1611df092" class="">Second, the question of affordability and availability of potential transhumanist technologies:</p><p id="a12d5e7f-6861-40e4-a0da-a48fc287abfe" class="">as transhumanist tech might become a type of goods provided by companies to the public. In this situation, a risk, as well as a business opportunity, would be to monetize transhumanist tech and transform it into yet another product of modern capitalist society, making it a profitable business,</p><p id="865ffdde-e0a7-4892-aa44-5150b91a3100" class="">putting it forward as a “<em>hype</em>” and therefore forgetting the purpose of transhumanism.</p><p id="688d6428-13bb-4030-815d-8afb54108233" class="">Like remain us Gabriel Dorthe Doctor in Environmental Humanities at University Paris 1 Panthéon-Sorbonne</p><p id="aef0b153-2390-4562-8859-9ed4296705d8" class="">“ It is not because you get a microchip under the skin that you can consider yourself as a transhumanist. ”</p><p id="26af6f4c-3821-466a-ad0e-b0460c872218" class="">And even with that, What would be the modalities and regulations surrounding the commercialization of such products? This question remains, for the moment, unanswered.</p><p id="66d03a48-224a-4a10-8b17-4e81e4a8d4b1" class="">So in the end is it a grace or a poisoned gift ?</p><p id="705a8d48-371f-4526-83c3-860bf8ea7ef6" class="">I’ll just answer that without any prior knowledge on the subject, it would be easy to be scared by the transhumanist movement and their vision of the future.</p><p id="7b0cb71e-780b-4105-8329-cc640634c39f" class="">this fantasy comes from all the dystopian content we have heard, saw and read, modern or contemporary.</p><p id="e9280df0-e31a-450a-b018-669f58ceb8b4" class="">(trust me after seeing the terminator for the first time) it is perfectly normal to be afraid of what is new, unknown and could possibly get out of our control but still, we should not make the mistake of mixing everything up.</p><p id="5f2f3694-7292-4715-81ca-e9e07611d01a" class="">Transhumanism, as a philosophical movement, is still very small and isolated,</p><p id="fe03cd2b-bab6-4235-b08f-8840f0e74205" class="">and the development of new scary or dystopian-like technologies (such as the facial recognition in China) should not be linked to the beliefs of this group.</p><p id="4614786a-87d9-419d-bb56-3dc43a0e74fd" class="">The truth is that you have, on one hand, the scientific and engineering part of the subject that develops new technologies in a free and unrestricted way. On the other hand, you find a few groups of thinkers that are eager to reach a point where the humankind will be able to upload someone’s brain on a computer or where we will create the Human 2.0 without really being too worried about what it implies in the short and middle-term. In between those two worlds, lots of questions arise</p><p id="301b2ebb-adaf-4884-ae7c-a3e632467ad4" class="">and the best science-fiction authors and film producers (as well as the journalists) have always known how to play with these dystopian fantasies.</p><p id="7ed416a6-4256-42fc-a7a4-965d6098da37" class="">and I’ll end on this quote from Gabriel Dorthe</p><p id="8448e9cf-6746-415d-847d-07dbf3815d45" class="">“ The definition of technology generates significant misunderstandings because we never know very well what we want to talk about when we refer to it. ”</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Algo</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f04fff7b-280d-416d-a3eb-e804208e5f8b" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_multi-axis_gimbal_rig.jpg" style="object-position:center 80%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/timeline_gray.svg"/></div><h1 class="page-title">Algo</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Propriétaire</th><td><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">d</span></span>damergi mohamed ali</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Étiquettes</th><td></td></tr></tbody></table></header><div class="page-body"><h3 id="f102a11e-17b5-4413-9cf1-97cc02147406" class="">L’invariant de boucle</h3><p id="2bdcd8c2-4cc8-4843-9bdd-6233e6b6b6f1" class=""><a href="https://shorturl.at/BDFL7">https://shorturl.at/BDFL7</a></p><p id="53f2ae44-a9cc-4577-bccf-36ca796551e9" class="">
+</p><p id="324e2fa6-1b53-457d-9a5e-42b2cdd0109a" class=""><strong>L&#x27;invariant de boucle en programmation</strong> est une condition ou une propriété qui reste vraie avant et après chaque itération d&#x27;une boucle. Il est essentiel pour garantir que l&#x27;algorithme fonctionne correctement et que la boucle termine conformément aux attentes. Voici un résumé des concepts clés liés à l&#x27;invariant de boucle :</p><p id="1ea0b5e6-3f7a-4596-b013-aaf5f9f95ac4" class=""><strong>1. Définition :</strong> L&#x27;invariant de boucle est une condition qui est vraie à chaque itération de la boucle, garantissant que l&#x27;état de l&#x27;algorithme reste cohérent.</p><p id="b0a5f284-9c2f-43b0-a4a1-fcc70990629e" class=""><strong>2. Objectif :</strong> L&#x27;invariant de boucle sert à prouver la validité et la correction de l&#x27;algorithme en garantissant que les préconditions et les postconditions de la boucle sont respectées.</p><p id="45e080fa-2116-4a87-aa23-8f0db971e3e0" class=""><strong>3. Caractéristiques :</strong> Un bon invariant de boucle doit être :</p><ul id="b59d9cea-dad7-4d9f-bd9e-f09b814214f8" class="bulleted-list"><li style="list-style-type:disc">Initialement vrai avant la première itération de la boucle.</li></ul><ul id="387074a8-68a5-4e5e-8729-895b7dff2981" class="bulleted-list"><li style="list-style-type:disc">Préservé à chaque itération (il reste vrai après chaque itération).</li></ul><ul id="01d33cdf-a9af-4805-b115-1a4bb8114228" class="bulleted-list"><li style="list-style-type:disc">Enfin vrai après la sortie de la boucle (il garantit que la boucle termine correctement).</li></ul><p id="bb7cd439-3a7a-4fb6-ad41-85bf0adc171d" class=""><strong>4. Utilité :</strong> L&#x27;invariant de boucle est un outil puissant pour aider à concevoir, déboguer et prouver la correction d&#x27;un algorithme. Il permet de montrer que l&#x27;algorithme fait ce qu&#x27;il est censé faire à chaque étape.</p><p id="3726a5e9-b93c-42f6-8e0d-ab173af54842" class=""><strong>5. Exemple :</strong> Par exemple, dans un algorithme de tri, l&#x27;invariant de boucle pourrait être que la sous-liste triée est de plus en plus grande à chaque itération. Cela garantit que tous les éléments sont triés à la fin de la boucle.</p><p id="de1494a8-2d8e-4ef8-b015-10f402aaf788" class="">
+</p><ol type="1" id="18521b49-9fc8-4e07-ad24-3e806067fe8e" class="numbered-list" start="1"><li><strong>Comprendre le problème</strong> : Avant de trouver l&#x27;invariant de boucle, assurez-vous de bien comprendre le problème que vous essayez de résoudre et comment l&#x27;algorithme devrait fonctionner. Identifiez les étapes importantes de l&#x27;algorithme et les propriétés que vous souhaitez garantir.</li></ol><ol type="1" id="e2488ebc-0816-467c-9072-6073be88d6c8" class="numbered-list" start="2"><li><strong>Identifier les variables</strong> : Identifiez les variables qui changent au fur et à mesure que la boucle progresse. Ces variables sont généralement utilisées pour suivre l&#x27;état de l&#x27;algorithme.</li></ol><ol type="1" id="237fc22f-e17a-4098-bfa2-4c6765a78945" class="numbered-list" start="3"><li><strong>Analyser le début de la boucle</strong> : Avant de commencer à itérer, examinez l&#x27;état initial des variables et définissez l&#x27;invariant comme une condition qui doit être vraie à ce stade.</li></ol><ol type="1" id="5c7627ce-27e0-4f0a-864d-8a7bd82e4c8d" class="numbered-list" start="4"><li><strong>Analyser le corps de la boucle</strong> : Analysez ce qui se passe à chaque itération de la boucle. Identifiez comment les variables évoluent et comment l&#x27;invariant doit être ajusté pour refléter ces changements.</li></ol><ol type="1" id="eea655a1-b70b-4826-bffc-95de7b358e24" class="numbered-list" start="5"><li><strong>Analyser la condition de fin</strong> : Examinez la condition de fin de la boucle (c&#x27;est-à-dire la condition qui, lorsqu&#x27;elle devient fausse, entraîne la sortie de la boucle). Assurez-vous que l&#x27;invariant est préservé lorsque la boucle se termine.</li></ol><ol type="1" id="18a4d3be-5710-45e4-ad45-9acd23cce670" class="numbered-list" start="6"><li><strong>Vérifier la validité de l&#x27;invariant</strong> : Vérifiez que l&#x27;invariant est valide en vérifiant qu&#x27;il est vrai avant et après chaque itération de la boucle.</li></ol><ol type="1" id="4612b0ce-d84d-496c-8fdc-99d2bc825611" class="numbered-list" start="7"><li><strong>Utiliser l&#x27;invariant</strong> : Une fois que vous avez identifié un invariant de boucle valide, vous pouvez l&#x27;utiliser pour démontrer la correction de votre algorithme ou pour aider à débugger le code si nécessaire.</li></ol><p id="fb5d09cb-5a7e-4c3d-86eb-70da36ff3f94" class="">
+</p><p id="73b05a93-8abc-477b-bca4-3b7c78bdfd57" class=""><strong>Invariants pour chaque type de tri:</strong></p><p id="acbc6b1c-5be6-4ff0-b3a9-fdc180ac0d0c" class="">Tri par sélection :<div class="indented"><p id="452f588f-4e90-44d9-b708-9b26c6990020" class="">Invariant de boucle : <mark class="highlight-red">À chaque itération de la boucle extérieure, l&#x27;élément le plus petit (ou le plus grand) du tableau non trié est sélectionné et placé dans la partie triée du tableau.</mark></p></div></p><ul id="472be45a-1f86-434f-bb69-94e3ad8951f8" class="bulleted-list"><li style="list-style-type:disc">Pour tout <code><strong>j</strong></code> tel que <code><strong>i ≤ j &lt; n</strong></code>, <code><strong>A[i]</strong></code> est le minimum parmi les éléments <code><strong>A[i]</strong></code>, <code><strong>A[i + 1]</strong></code>, ..., <code><strong>A[n - 1]</strong></code>.</li></ul><p id="79ea13f7-00f6-474e-bdc4-5e4cbc87bd40" class="">Tri par insertion :<div class="indented"><p id="e26f15c5-b90c-4568-b665-270a13503f11" class="">Invariant de boucle : <mark class="highlight-red">À chaque itération de la boucle extérieure, l&#x27;élément courant est inséré à sa position correcte dans la partie triée du tableau</mark>, et cette partie triée reste triée.</p></div></p><ul id="e782aa64-7606-4abe-9777-7013a032638f" class="bulleted-list"><li style="list-style-type:disc">Le sous-tableau <code><strong>A[0]</strong></code>, <code><strong>A[1]</strong></code>, ..., <code><strong>A[i]</strong></code> est trié, et les éléments <code><strong>A[i+1]</strong></code>, <code><strong>A[i+2]</strong></code>, ..., <code><strong>A[n-1]</strong></code> sont dans leur ordre original.</li></ul><p id="de5b12cb-d220-47bb-851a-f75173e61104" class="">Tri fusion (Merge Sort) :<div class="indented"><p id="2ca41e38-da8e-4432-8a7e-af4c5efc6c79" class="">Invariant de boucle : L&#x27;invariant majeur est que le tableau est divisé en deux sous-tableaux triés, puis ces sous-tableaux sont fusionnés pour former un seul sous-tableau trié. <mark class="highlight-red">L&#x27;invariant pour la fusion est que les éléments dans les deux sous-tableaux fusionnés sont triés les uns par rapport aux autres.</mark></p></div></p><ul id="975ab402-8f75-4dd1-8e36-9d278eb0f4cf" class="bulleted-list"><li style="list-style-type:disc">Les sous-tableaux <code><strong>A[p..q]</strong></code> et <code><strong>A[q+1..r]</strong></code> sont triés. Lorsqu&#x27;ils sont fusionnés, le sous-tableau <code><strong>A[p..r]</strong></code> est trié.</li></ul><p id="bf2a9059-42d0-4d32-828c-52df927841d5" class="">
+</p><h3 id="f42d8df3-3882-4490-b3ce-c0b83e940241" class="">Complexité</h3><p id="4eaa6e33-3e88-4424-a2a5-71bf9fad1904" class=""><a href="https://shorturl.at/wEJWY">https://shorturl.at/wEJWY</a></p><p id="643a09ff-b7b4-41a5-af88-ee43c4dbbff4" class="">
+</p><p id="724501ee-2da8-4670-bfc4-e264c32f50d2" class="">La complexité algorithmique est l&#x27;étude de la quantité de ressources (telles que le temps d&#x27;exécution et l&#x27;espace mémoire) qu&#x27;un algorithme nécessite pour résoudre un problème en fonction de la taille de l&#x27;entrée. Comprendre la complexité est essentiel pour évaluer les performances des algorithmes, choisir les meilleures solutions et prédire comment un algorithme évoluera avec des entrées plus grandes. Dans ce cours, nous allons explorer les concepts clés de la complexité algorithmique.</p><p id="15de3ed1-690e-4059-b13c-aa216765c0f9" class=""><strong>1. Objectifs de la Complexité Algorithmique :</strong></p><ul id="23ad73c4-2aa7-435c-83fd-6c949b8bb48b" class="bulleted-list"><li style="list-style-type:disc"><strong>Évaluation des performances :</strong> Mesurer et comparer les performances des algorithmes pour résoudre un problème donné.</li></ul><ul id="b68b7f91-0a22-49bf-926a-098a622a3812" class="bulleted-list"><li style="list-style-type:disc"><strong>Prédiction du comportement :</strong> Prédire comment un algorithme réagira avec des données d&#x27;entrée de différentes tailles.</li></ul><ul id="02fda193-855e-43fb-bbe6-9a3209aef2a6" class="bulleted-list"><li style="list-style-type:disc"><strong>Optimisation :</strong> Identifier les algorithmes les plus efficaces pour résoudre un problème spécifique.</li></ul><p id="ec6a954e-1a1a-4197-a9de-363c9ecd8b67" class=""><strong>2. Types de Complexité :</strong></p><p id="2b2b7e36-24c0-488e-a575-c2c600f36ee7" class="">La complexité algorithmique peut être divisée en deux types principaux :</p><ul id="0cb935ca-a2af-40da-a269-e571501f3301" class="bulleted-list"><li style="list-style-type:disc"><strong>Complexité Temporelle :</strong> Mesure le temps d&#x27;exécution de l&#x27;algorithme en fonction de la taille de l&#x27;entrée. Elle est souvent exprimée en notation Big O (O(f(n))) pour décrire la croissance du temps d&#x27;exécution par rapport à la taille de l&#x27;entrée (n).</li></ul><ul id="64aee5e9-e271-4066-92ad-cc3c61a16363" class="bulleted-list"><li style="list-style-type:disc"><strong>Complexité Spatiale :</strong> Mesure la quantité de mémoire (espace) utilisée par l&#x27;algorithme en fonction de la taille de l&#x27;entrée. Elle est également exprimée en notation Big O.</li></ul><p id="c90c3e19-8a59-48bf-b1ca-835c020ef0b7" class=""><strong>3. Notation Big O :</strong></p><p id="2e0bf177-0b77-4a22-838c-e2346df452d5" class="">La notation Big O est couramment utilisée pour représenter la complexité algorithmique. Elle fournit une limite supérieure sur la croissance du temps d&#x27;exécution (ou de l&#x27;espace mémoire) de l&#x27;algorithme en fonction de la taille de l&#x27;entrée. Voici quelques exemples de notations courantes :</p><ul id="714dd4cf-0682-4d7e-8fd5-bce7dc068254" class="bulleted-list"><li style="list-style-type:disc">O(1) : Complexité constante, l&#x27;algorithme s&#x27;exécute en temps constant, indépendamment de la taille de l&#x27;entrée.</li></ul><ul id="62e1038f-c90f-4543-b5d2-6be254fa9969" class="bulleted-list"><li style="list-style-type:disc">O(log n) : Complexité logarithmique, l&#x27;algorithme a un temps d&#x27;exécution qui croît logarithmiquement avec la taille de l&#x27;entrée.</li></ul><ul id="1b5d47c5-d888-45de-a754-ad44998d05a5" class="bulleted-list"><li style="list-style-type:disc">O(n) : Complexité linéaire, le temps d&#x27;exécution augmente linéairement avec la taille de l&#x27;entrée.</li></ul><ul id="e50303f5-5a91-45d8-bc66-eb5e7865f063" class="bulleted-list"><li style="list-style-type:disc">O(n log n) : Complexité linéarithmique, courante dans de nombreux algorithmes de tri efficaces.</li></ul><ul id="bcbb0ee3-dec9-4a58-8ff2-b3508cb6e0d4" class="bulleted-list"><li style="list-style-type:disc">O(n^2) : Complexité quadratique, le temps d&#x27;exécution augmente quadratiquement avec la taille de l&#x27;entrée.</li></ul><ul id="38938ec4-09ef-41b8-bc9c-ce7d5dfbd7fc" class="bulleted-list"><li style="list-style-type:disc">O(2^n) : Complexité exponentielle, le temps d&#x27;exécution augmente de manière exponentielle avec la taille de l&#x27;entrée.</li></ul><p id="bb23df91-3d09-406d-bd67-07e5439eaf97" class=""><strong>4. Analyse et Comparaison d&#x27;Algorithmes :</strong></p><p id="7c127f84-c94a-4fde-8184-2b7b29482fd0" class="">L&#x27;analyse de la complexité algorithmique implique de déterminer la complexité d&#x27;un algorithme en fonction de ses étapes et des structures de données qu&#x27;il utilise. Ensuite, vous pouvez comparer différents algorithmes pour le même problème et choisir celui qui offre les meilleures performances en fonction de vos besoins spécifiques.</p><p id="f5fa3052-9970-4c06-be31-9b8aa670902a" class=""><strong>5. Amélioration de la Complexité :</strong></p><p id="7ff57893-dfc9-4ecb-8315-934610376dbc" class="">Il est souvent possible d&#x27;optimiser des algorithmes pour réduire leur complexité. Par exemple, passer d&#x27;un algorithme en O(n^2) à un algorithme en O(n log n) peut considérablement améliorer les performances.</p><p id="3a122782-ea4f-40e7-a67a-516258fb4c95" class=""><strong>6. Analyse Empirique :</strong></p><p id="f1862924-0805-46a5-8c64-725e29589824" class="">Outre l&#x27;analyse théorique, il est important de réaliser des tests empiriques (mesures pratiques) pour évaluer les performances des algorithmes dans des scénarios réels.</p><p id="340826f0-f118-4a25-adc0-93e78baef5e4" class=""><strong>7. Conclusion :</strong></p><p id="dcaf8b3b-5042-497f-bd7d-ebbb7ef89aa2" class="">La complexité algorithmique est un aspect essentiel de la conception et de l&#x27;analyse des algorithmes. La compréhension de la complexité permet de choisir des algorithmes efficaces, d&#x27;optimiser les performances des applications et de résoudre efficacement des problèmes. Elle est cruciale pour les informaticiens et les développeurs, quel que soit leur domaine d&#x27;expertise.</p><p id="bb1db1c3-96a8-40e6-b4d6-f9885c9bb037" class=""><strong>Tri par sélection :</strong></p><ul id="578cce01-f742-45c8-a7a5-3b2e4f919762" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">Pire cas : O(n^2)</mark></li></ul><ul id="ee992e31-4c8a-439f-b718-ab152d0a0b85" class="bulleted-list"><li style="list-style-type:disc">Cas moyen : O(n^2)</li></ul><ul id="00387779-9503-40b5-a5b3-cb1d3092a0d5" class="bulleted-list"><li style="list-style-type:disc">Meilleur cas : O(n^2)</li></ul><p id="5b0ea285-f81b-4298-bdd9-8b12a9fbdaa0" class=""><strong>Tri par insertion :</strong></p><ul id="810b759e-7235-434a-a836-0b8efb32e21d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">Pire cas : O(n^2)</mark></li></ul><ul id="4adc0168-ddef-4f55-8766-5701d570bc3f" class="bulleted-list"><li style="list-style-type:disc">Cas moyen : O(n^2)</li></ul><ul id="600d8db9-0cab-40b6-be5b-f61526c005b4" class="bulleted-list"><li style="list-style-type:disc">Meilleur cas : O(n)</li></ul><p id="d8475506-2fa4-4af4-b20f-369881a0452d" class=""><strong>Tri fusion (Merge Sort) :</strong></p><ul id="6cbf39da-fdcf-4b21-950b-b9b38cf861cf" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">Pire cas : O(n log n)</mark></li></ul><ul id="ca6a6d98-3893-4b10-b826-64d6d0f54907" class="bulleted-list"><li style="list-style-type:disc">Cas moyen : O(n log n)</li></ul><ul id="c454fc66-1a44-40be-a731-86c628fea855" class="bulleted-list"><li style="list-style-type:disc">Meilleur cas : O(n log n)</li></ul><p id="37492d05-a1ad-4354-a2aa-e61cf663b681" class="">
+</p><figure id="ebe7c8a3-7c2c-44eb-a227-ed664a0c6721"><div class="source"><a href="https://perso.liris.cnrs.fr/nicolas.pronost/UCBL/LIFAPSD/TD/TD5_corriges.pdf">https://perso.liris.cnrs.fr/nicolas.pronost/UCBL/LIFAPSD/TD/TD5_corriges.pdf</a></div></figure><figure id="bfc9490f-ee16-4dd1-b53f-2fe3bd882447"><div class="source"><a href="https://perso.liris.cnrs.fr/nicolas.pronost/UCBL/LIFAPSD/TD/TD6_corriges.pdf">https://perso.liris.cnrs.fr/nicolas.pronost/UCBL/LIFAPSD/TD/TD6_corriges.pdf</a></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
