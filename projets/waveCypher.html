@@ -1,0 +1,39 @@
+<div class="projet">
+
+    <div class="titleimg">
+        <img class="projet-img-title" src="images/waveCypher/title.png">
+    </div>
+
+    <h2 class="projet-titles">Introduction</h2>
+    <p class="content">Ce programme en Go permet d'encoder et de décoder des messages dans des fichiers MP3, avec une option de chiffrement AES-128 pour protéger le contenu du message.</p>
+    
+    <h2 class="projet-titles">Fonctionnalités</h2>
+    <ul class="content">
+        <li><strong>Encodage de message :</strong> Ajoute un message texte dans les premiers octets d'un fichier MP3.</li>
+        <li><strong>Décodage de message :</strong> Extrait le message encodé dans un fichier MP3.</li>
+        <li><strong>Chiffrement AES :</strong> Protégez le message encodé avec un chiffrement AES-128 en utilisant une clé de 16 caractères.</li>
+    </ul>
+
+    <h2 class="projet-titles">Utilisation</h2>
+    <pre class="content">
+Usage:
+-c &lt;fichier.mp3&gt; "message"  pour encoder un message dans un fichier MP3
+-c &lt;fichier.mp3&gt; "message" "clé"  pour encoder un message et le crypter avec une clé de 16 caractères
+-d &lt;fichier.mp3&gt;  pour décoder un message d'un fichier MP3
+-d &lt;fichier.mp3&gt; "clé"  pour décoder un message crypté d'un fichier MP3
+    </pre>
+
+    <h2 class="projet-titles">Exemples</h2>
+    <ul class="content">
+        <li><code>-c musique.mp3 "Message secret"</code> : Encode un message dans le fichier <em>musique.mp3</em>.</li>
+        <li><code>-c musique.mp3 "Message secret" "maCleDeChiffre16"</code> : Encode et chiffre un message avec une clé.</li>
+        <li><code>-d musique.mp3</code> : Décodage d'un message d'un fichier MP3.</li>
+        <li><code>-d musique.mp3 "maCleDeChiffre16"</code> : Décodage et déchiffrement d'un message protégé.</li>
+    </ul>
+
+    <p class="content">Ce programme peut être utilisé pour dissimuler des messages simples dans des fichiers audio MP3, offrant une discrétion supplémentaire avec l'ajout du chiffrement AES-128.</p>
+
+    <h2 class="projet-titles">Lien vers le projet</h2>
+    <p class="content">Consultez le dépôt GitHub pour plus d'informations et accéder au code source :
+        <br><a class="projet-link" href="https://github.com/yourusername/mp3_encoder" target="_blank">Encodeur MP3 sur GitHub</a></p>
+</div>
