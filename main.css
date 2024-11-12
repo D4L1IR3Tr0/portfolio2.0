@@ -104,9 +104,18 @@ body {
     padding: 0.1rem 0; /* Add padding to create space between text and animation */
 }
 
+.nav-link1 {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative; /* Ensure it's the relative positioning context for the absolute elements */
+    padding: 0.1rem 0; /* Add padding to create space between text and animation */
+}
+
 /* nav list animation */
 
-.site-nav .nav-link:before, .site-nav .nav-link:after {
+.site-nav .nav-link:before, .site-nav .nav-link:after,
+.site-nav .nav-link1:before, .site-nav .nav-link1:after {
     position: absolute;
     opacity: 0;
     width: 0%;
@@ -116,22 +125,25 @@ body {
     transition: all 0.3s;
 }
 
-.site-nav .nav-link:before {
+.site-nav .nav-link:before, .site-nav .nav-link1:before {
     left: 0;
     top: 0;
     transform: translateY(-0.5rem); /* Adjust position to add space above the text */
 }
 
-.site-nav .nav-link:after {
+.site-nav .nav-link:after, .site-nav .nav-link1:after {
     right: 0;
     bottom: 0;
     transform: translateY(0.5rem); /* Adjust position to add space below the text */
 }
 
-.site-nav .nav-link:hover:before, .site-nav .nav-link:hover:after {
+.site-nav .nav-link:hover:before, .site-nav .nav-link:hover:after,
+.site-nav .nav-link1:hover:before, .site-nav .nav-link1:hover:after {
     opacity: 1;
     width: 100%;
 }
+
+
 
 
 
