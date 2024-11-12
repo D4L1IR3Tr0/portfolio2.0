@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/png" href="images/logoBackground.jpg">
+    
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="site-header">
+        <div class = "logo">
+        <img src="images/logo.png" alt="Logo" class="site-logo">
+        </div>
+        
+        <div class="header_container">
+            <h2 class="site-title2">Mohamed Ali Damergi</h2>
+            <nav class="site-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="projets.html" class="nav-link">Projets</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div style="margin-top: 35px;"></div>
  <h2 class="section-title">Mes Projets</h2>
     <section id="projects" class="projects-section">
         <div class="container">
@@ -7,7 +36,7 @@
                     <button class="filter-btn active" onclick="filterSelection('all', this)">Tous</button>
                     <button class="filter-btn" onclick="filterSelection('game', this)">Jeux Vidéo</button>
                     <button class="filter-btn" onclick="filterSelection('simulation', this)">Simulation</button>
-                    <!--<button class="filter-btn" onclick="filterSelection('software', this)">Logiciel</button>-->
+                    <button class="filter-btn" onclick="filterSelection('software', this)" style="display: none;">Logiciel</button>
                     <button class="filter-btn" onclick="filterSelection('hardware', this)">Matériel/Robotique</button>
                     <button class="filter-btn" onclick="filterSelection('web', this)">Web</button>
                     <button class="filter-btn" onclick="filterSelection('pentesting', this)">Pentesting</button>
@@ -18,10 +47,19 @@
                 </div>
             </div>
 
-            <main class="site-main" id="content">
-                <!-- Le contenue -->
-            </main>
+            
+<!-- Le Modal -->
+<div id="project-myModal" class="project-modal" style="display: none;">
+    <!-- Contenu du Modal -->
+    <div class="project-modal-content">
+        <span class="project-close-btn">&times;</span>
+        <div id="project-modalProjectContent"> <!-- Ajoutez ici l'ID manquant -->
+            <!-- Le contenu du projet sera injecté ici -->
+        </div>
+    </div>
+</div>
 
+            
             <div class="projects-list">
                 <div class="project-item" data-category="game">
                     <h3 class="project-title">Space revolution version C++</h3>
@@ -32,8 +70,8 @@
                         Space Revolution est un jeu vidéo codé en C++ et réalisé dans le cadre d'un projet de groupe. Avec mes binômes, nous avons décidé de créer un jeu largement inspiré par les jeux des années 90. Le jeu combine plusieurs genres populaires de l'époque, tels que le shoot'em up, le tower defense, la course, et le tir en vue du dessus. Notre objectif était de capturer l'essence nostalgique de ces classiques tout en apportant notre propre touche unique.
                     </p>
                     <div class="project_btn_container">
-                        <a href="projets/sr_C++.html" class="project_btn" data-page="projets/sr_C++">Voir le projet</a>
                     </div>
+                    <a href="projets/sr_C++.html" class="project_btn" data-page="projets/sr_C++">Voir le projet</a>
                 </div>
 
 
@@ -209,3 +247,164 @@
             </div>
         </div>
     </section>
+  
+
+
+    <div style="margin-bottom: 20px;"></div>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; Mohamed Ali Damergi / R3TR0 tout droit deservé</p>
+            <p>Les icones utilisées sont disponnibles sur <a href="https://icons8.com/">icon8</a></p>
+        </div>
+    
+        <div class="button-container">
+            <a class="linkedIn_btn" href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+                <img src="icons/linkedin.png" alt="LinkedIn">
+            </a>
+            
+            <a class="github_btn" href="https://github.com/D4L1IR3Tr0" target="_blank">
+                <img src="icons/github.png" alt="GitHub">
+            </a>
+        </div>
+    
+        <div class="darkmode-container">
+            <button class="darkmode_btn">
+                <img src="icons/sun.png" alt="DarkMode">
+                <span>Mode sombre</span>
+            </button>
+        </div>
+    </footer>
+    
+</div>
+    
+</body>
+
+<script src="projet.js"></script>
+<script src="script.js"></script>
+
+<style>
+
+/* Modal container */
+.project-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(162, 162, 162, 0.383);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Apply blur effect to background */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+/* Modal content */
+.project-modal-content {
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 1800px;
+    max-height: 90%; /* Max height of modal */
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Close button */
+.project-close-btn {
+    color: #333;
+    font-size: 2.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.project-close-btn:hover {
+    color: #ff4040;
+}
+
+/* Styling for modal content */
+#project-modalProjectContent {
+    background-color: white;
+    padding: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-height: 75vh; /* Ensure the content stays within the viewport */
+    overflow-y: auto; /* Allow scrolling if content is too long */
+    font-family: 'Arial', sans-serif; /* Modern font */
+    border-radius: 10px;
+}
+
+/* Optional: Background effect for modal content */
+.project-modal-content {
+    background-color: rgba(150, 150, 150, 0.463);
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px;
+}
+
+/* Optional: Add a dark overlay effect */
+.project-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Optional: Hover effect on modal overlay */
+.project-modal:hover {
+    background-color: rgba(0, 0, 0, 0.85); /* Slightly darker when hovered */
+}
+
+
+</style>
+<script>
+
+// Sélectionner le modal et le bouton de fermeture
+const modal = document.getElementById('project-myModal');
+const closeBtn = document.getElementsByClassName('project-close-btn')[0];
+
+// Fonction pour ouvrir le modal avec le contenu du projet
+function openProjectModal(projectUrl) {
+    // Charger le contenu du projet via AJAX ou une autre méthode
+    fetch(projectUrl)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('project-modalProjectContent').innerHTML = data;
+            modal.style.display = "flex"; // Afficher le modal avec flex
+        })
+        .catch(error => {
+            console.error("Erreur de chargement du projet:", error);
+        });
+}
+
+// Fonction pour fermer le modal
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Fermer le modal si l'utilisateur clique en dehors de la zone du modal
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Attacher l'événement click sur chaque lien "Voir le projet"
+const projectLinks = document.querySelectorAll('.project_btn');
+projectLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Empêcher la navigation vers la page
+        const projectUrl = link.getAttribute('href');
+        openProjectModal(projectUrl); // Ouvrir le projet dans le modal
+    });
+});
+
+
+</script>
+
+</html>

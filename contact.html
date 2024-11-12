@@ -1,13 +1,84 @@
-<form class="contact-form" method="post" id="contactForm">
-    <div class="form-group">
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/png" href="images/logoBackground.jpg">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+    
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="site-header">
+        <div class = "logo">
+        <img src="images/logo.png" alt="Logo" class="site-logo">
+        </div>
+        
+        <div class="header_container">
+            <h2 class="site-title2">Mohamed Ali Damergi</h2>
+            <nav class="site-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="projets.html" class="nav-link">Projets</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Contactez-moi</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-button">
+                <button type="submit" class="submit-button">Envoyer</button>
+            </div>
+        </form>
+        
     </div>
-    <div class="form-button">
-        <button type="submit" class="submit-button">Envoyer</button>
+</section>
+
+<div style="margin-bottom: 113px;"></div>
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; Mohamed Ali Damergi / R3TR0 tout droit deservé</p>
+        <p>Les icones utilisées sont disponnibles sur <a href="https://icons8.com/">icon8</a></p>
     </div>
-</form>
+
+    <div class="button-container">
+        <a class="linkedIn_btn" href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+            <img src="icons/linkedin.png" alt="LinkedIn">
+        </a>
+        
+        <a class="github_btn" href="https://github.com/D4L1IR3Tr0" target="_blank">
+            <img src="icons/github.png" alt="GitHub">
+        </a>
+    </div>
+
+    <div class="darkmode-container">
+        <button class="darkmode_btn">
+            <img src="icons/sun.png" alt="DarkMode">
+            <span>Mode sombre</span>
+        </button>
+    </div>
+</footer>
+
+</div>
+
+</body>
+<script src="contact.js"></script>
+<script src="script.js"></script>
+
+</html>

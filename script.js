@@ -1,53 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to load the content
-    function loadPage(page, addHistory = true) {
-        fetch(page + '.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('content').innerHTML = data;
-                console.log('Page loaded:', page);
-                window.scrollTo(0, 0); // Scroll to the top of the page
-                attachProjectLinkEvents(); // Re-attach events to the newly loaded content
-                if (addHistory) {
-                    history.pushState({page: page}, null, `#${page}`);
-                }
-            })
-            .catch(error => console.error('Error loading page:', error));
-    }
 
-    // Load the default home page
-    const initialPage = window.location.hash ? window.location.hash.substring(1) : 'acceuil';
-    loadPage(initialPage, false);
-
-    // Add click events to navigation links
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const page = this.getAttribute('data-page');
-            loadPage(page);
-        });
-    });
-
-    // Function to attach click events to project links
-    function attachProjectLinkEvents() {
-        document.querySelectorAll('.project_btn').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const projet = this.getAttribute('data-page');
-                loadPage(projet);
-            });
-        });
-    }
-
-    // Handle browser back/forward buttons
-    window.addEventListener('popstate', function(event) {
-        if (event.state && event.state.page) {
-            loadPage(event.state.page, false);
-        }
-    });
-
-    // Initial attachment of project link events
-    attachProjectLinkEvents();
 
     // Dark mode toggle
     const darkmodeBtn = document.querySelector('.darkmode_btn');
