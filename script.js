@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.text())
             .then(data => {
                 document.getElementById('content').innerHTML = data;
+                console.log('Page loaded:', page);
                 window.scrollTo(0, 0); // Scroll to the top of the page
                 attachProjectLinkEvents(); // Re-attach events to the newly loaded content
                 if (addHistory) {
