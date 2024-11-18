@@ -15,12 +15,15 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #343642;
+    height: 100%;
 }
 
 .site-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
+    min-width: 100%;
+    
 }
 
 .site-main {
@@ -36,6 +39,7 @@ body {
     display: flex;
     margin-top: -0.8%;
     margin-bottom: -0.8%;
+    flex-shrink: 0;
 }
 
 .site-title {
@@ -145,7 +149,9 @@ body {
 
 
 
-
+section{
+    flex-grow: 1;
+}
 
 /* Styles pour le contenu principal */
 .site-main {
@@ -481,8 +487,13 @@ body {
     align-items: center;
     flex-shrink: 0;
     flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
+.filtre_menu_container {
+    position: sticky;
+    top: 0;
+}
 
 
 .container {
@@ -881,6 +892,8 @@ span {
         display: none; /* Hide the button by default */
     }
     
+}
+
     /* Media query to show the button on small screens */
     @media screen and (max-width: 768px) {
         .display-btn {
@@ -926,8 +939,9 @@ span {
             background-color: #e0e0e0;
         }
     }
-    
-}
+
+
+
 /* LES PROJETS */
 
 .projet {
@@ -1113,4 +1127,79 @@ span {
 .cours_link:hover {
     color: #ff9a00; /* Change color on hover */
     transform: scale(1.05); /* Slightly increase the size */
+}
+
+
+
+
+
+
+
+
+#ipcalc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin: 0 auto;
+    background: none;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+#page-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#ipcalcForm {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+#label-ip,
+#label-mask {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+#ip,
+#mask {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#calculate-btn {
+    background: green;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+#calculate-btn:hover {
+    background: #2980b9;
+}
+
+#output {
+    margin-top: 20px;
+    padding: 15px;
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    text-align: center;
+    display: none; /* Hidden by default */
 }
