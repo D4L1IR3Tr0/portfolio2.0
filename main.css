@@ -356,7 +356,7 @@ section{
 
 .filter-btn {
     background-color: transparent;
-    color: #ffffff;
+    color: #000000;
     border: none;
     padding: 10px 20px;
     margin: 0 10px;
@@ -492,17 +492,11 @@ section{
 
     /* rearanger le menu des filtres pour l'adapter au mobile*/
     .filtre_menu_container {
-        position: sticky;
-        top: 0;
-    }
-
-    .filtre_menu_container {
-        background: rgba(72, 81, 91, 0.8); /* Fond blanc translucide */
-        backdrop-filter: blur(10px); /* Flou en arrière-plan */
-        border-radius: 8px; /* Optionnel : arrondir les coins pour un effet plus doux */
-
-        margin-left: 60px;
-        margin-right: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
     }
 
 
