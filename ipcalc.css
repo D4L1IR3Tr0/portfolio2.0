@@ -27,6 +27,12 @@ form label {
     color: #0a4051;
 }
 
+.section-title{
+    font-size: 2rem;
+    color: #0a4051;
+    margin-bottom: 20px;
+}
+
 form input {
     width: 80%;
     padding: 10px;

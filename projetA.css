@@ -1,0 +1,330 @@
+/* Styles pour la page projet */
+.projet {
+    font-family: Arial, sans-serif;
+    color: #0a4051;
+    margin: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #ffff;
+}
+
+.projet .search-box {
+    display: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #466a78;
+    border-radius: 5px;
+}
+
+.projet .titleimg {
+    text-align: center; /* L'image sera centrée */
+    margin-bottom: 30px;
+}
+
+.projet .projet-img-title {
+    max-width: 80%; /* Limite la largeur de l'image à 80% de son conteneur */
+    height: auto; /* Garder le ratio de l'image intact */
+    border-radius: 8px;
+}
+
+.projet-titles {
+    color: #0a4051;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left; /* Assure que le titre est aligné à gauche */
+}
+
+.projet h1.projet-titles {
+    font-size: 2.5rem;
+}
+
+.projet h2.projet-titles {
+    font-size: 2rem;
+}
+
+.projet h3.projet-titles {
+    font-size: 1.8rem;
+}
+
+.projet h4.projet-titles {
+    font-size: 1.5rem;
+}
+
+.projet .content {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left; /* Assure que le texte est aligné à gauche */
+}
+
+.projet .content br {
+    margin-bottom: 10px;
+}
+
+.projet .cadre {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les images */
+    margin-top: 20px;
+}
+
+.projet .cadre img {
+    width: 300px; /* Largeur fixe pour toutes les images */
+    height: 200px; /* Hauteur fixe pour toutes les images */
+    object-fit: cover; /* Pour s'assurer que l'image s'adapte bien au cadre */
+    border: 2px solid #0a4051;
+    border-radius: 5px;
+}
+
+.projet-link {
+    color: #466a78;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.projet-link:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour le modal */
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#myModal .modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    width: 70%; /* Largeur du modal réduite à 70% de l'écran */
+    max-width: 800px; /* Limite la largeur à un maximum de 800px */
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+#myModal .close {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    font-size: 4rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#myModal .close:hover {
+    color: #ff8800;
+}
+
+#myModal img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* L'image ne dépassera pas la taille du modal */
+    border-radius: 5px;
+}
+
+
+.projet .cadre {
+    display: flex;
+    flex-direction: column; /* Met les éléments en colonne, vidéo en haut et images en dessous */
+    gap: 20px; /* Espacement entre les éléments */
+    margin-top: 20px;
+    align-items: center; /* Centre les éléments horizontalement */
+}
+
+.projet .video {
+    width: 100%; /* La vidéo occupe toute la largeur du conteneur */
+    display: flex;
+    justify-content: center;
+}
+
+.projet .video video {
+    width: 100%; /* La vidéo occupe toute la largeur disponible */
+    max-width: 1000px; /* Largeur maximale de la vidéo */
+    height: auto; /* Ajuste la hauteur proportionnellement */
+    border-radius: 10px;
+}
+
+.projet .image-container {
+    display: flex;
+    gap: 20px; /* Espacement entre les images */
+    justify-content: center; /* Centre les images horizontalement */
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne si elles ne tiennent pas dans l'espace disponible */
+}
+
+.projet .image-container img {
+    width: 300px; /* Largeur de chaque image */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Ajuster le style des listes dans les sections spécifiques */
+.projet ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    text-align: left; /* Liste alignée à gauche */
+}
+
+.projet ul li {
+    font-size: 1rem;
+    color: #333;
+    text-align: left; /* Assure que les éléments de la liste sont à gauche */
+}
+
+/* Media Queries pour mobile */
+@media (max-width: 768px) {
+    .projet h1.projet-titles {
+        font-size: 1.8rem; /* Taille du titre principal plus petite sur mobile */
+    }
+
+    .projet h2.projet-titles {
+        font-size: 1.6rem;
+    }
+
+    .projet h3.projet-titles {
+        font-size: 1.4rem;
+    }
+
+    .projet h4.projet-titles {
+        font-size: 1.3rem;
+    }
+
+    .projet .content {
+        font-size: 0.95rem; /* Réduit la taille du texte */
+    }
+
+    .projet .cadre {
+        gap: 15px; /* Réduit l'espacement entre la vidéo et les images */
+    }
+
+    .projet .image-container img {
+        width: 100%;
+        max-width: 280px; /* Réduit la largeur des images pour les écrans mobiles */
+    }
+}
+
+
+/* Mode sombre : système */
+@media (prefers-color-scheme: dark) {
+    /* Fond et texte général */
+    .projet {
+        background-color: #121212; /* Fond sombre */
+        color: #e0e0e0; /* Texte clair */
+    }
+
+    .projet .search-box {
+        background-color: #333; /* Fond sombre pour la boîte de recherche */
+        border-radius: 5px;
+    }
+
+    .projet .titleimg {
+        margin-bottom: 30px;
+        filter: invert(1);
+    }
+
+    .projet .projet-img-title {
+        border-radius: 8px;
+    }
+
+    .projet-titles {
+        color: #e0e0e0; /* Titres clairs */
+    }
+
+    .projet h1.projet-titles,
+    .projet h2.projet-titles,
+    .projet h3.projet-titles,
+    .projet h4.projet-titles {
+        color: #e0e0e0; /* Titres clairs */
+    }
+
+    .projet .content {
+        color: #e0e0e0; /* Texte du contenu clair */
+    }
+
+    .projet .cadre {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .projet .cadre img {
+        border: 2px solid #e0e0e0; /* Bordures claires */
+    }
+
+    .projet-link {
+        color: #80bfff; /* Lien bleu clair */
+    }
+
+    .projet-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Styles pour le modal */
+    #myModal {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #myModal .modal-content {
+        background-color: #1e1e1e; /* Fond sombre pour le modal */
+        color: #e0e0e0; /* Texte clair */
+    }
+
+    /* Video et images */
+    .projet .video video {
+        border-radius: 10px;
+    }
+
+    .projet .image-container img {
+        border-radius: 10px;
+    }
+
+    /* Disposition des éléments dans le cadre */
+    .projet .cadre {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .projet .video {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .projet .video video {
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .projet .image-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .projet .image-container img {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    .projet ul li {
+        color: #ffffff;
+    }
+}
