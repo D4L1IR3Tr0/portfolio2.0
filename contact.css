@@ -1,0 +1,76 @@
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    flex-grow: 1;  /* Cette section prend tout l'espace disponible */
+    min-height: 810px;
+}
+
+.contact-form {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 1.1rem;
+    color: #466a78; /* Secondary color */
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #0a4051; /* Focus with primary color */
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 310px;
+    resize: vertical;
+}
+
+.contact-form .form-button {
+    text-align: center;
+}
+
+.submit-button {
+    background-color: #0a4051; /* Primary color */
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #466a78; /* Secondary color on hover */
+}
+
+.submit-button:focus {
+    outline: none;
+}

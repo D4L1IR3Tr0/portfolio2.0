@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="HF.css">
     <link rel="icon" type="image/png" href="images/logoBackground.jpg">
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
     
 </head>
 <body>
@@ -24,7 +22,7 @@
                 <ul class="nav-list">
                     <li class="nav-item"><a href="Index.html" class="nav-link">Accueil</a></li>
                     <li class="nav-item"><a href="projets.html" class="nav-link">Projets</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
                     <li class="nav-item"><a href="ipcalc.html" class="nav-link">Calculatrice IP</a></li>
                 </ul>
             </nav>
@@ -33,7 +31,6 @@
 
 <section id="contact" class="contact-section">
     <div class="container">
-        <h2 class="section-title">Contactez-moi</h2>
         <form class="contact-form" id="contactForm">
             <div class="form-group">
                 <label for="name">Nom</label>
@@ -47,16 +44,16 @@
                 <button type="submit" class="submit-button">Envoyer</button>
             </div>
         </form>
-        
     </div>
 </section>
 
 <footer class="site-footer">
-    <div class="container">
-        <p>&copy; Mohamed Ali Damergi / R3TR0 tout droit deservé</p>
-        <p>Les icones utilisées sont disponnibles sur <a href="https://icons8.com/">icon8</a></p>
+    <div class="footer-text">
+        <p>&copy; Mohamed Ali Damergi / R3TR0 tout droit réservé</p>
+        <p>Les icônes utilisées sont disponibles sur <a href="https://icons8.com/" target="_blank">icon8</a></p>
     </div>
 
+    <!-- Liens à gauche (LinkedIn, GitHub) -->
     <div class="button-container">
         <a class="linkedIn_btn" href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
             <img src="icons/linkedin.png" alt="LinkedIn">
@@ -67,6 +64,7 @@
         </a>
     </div>
 
+    <!-- Bouton mode sombre à droite -->
     <div class="darkmode-container">
         <button class="darkmode_btn">
             <img src="icons/sun.png" alt="DarkMode">
@@ -75,9 +73,11 @@
     </div>
 </footer>
 
+
 </div>
 
 </body>
+
 <script src="contact.js"></script>
 <script src="script.js"></script>
 
