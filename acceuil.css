@@ -194,3 +194,81 @@
     }
 
 }
+
+
+/* Mode sombre (Dark Mode) avec détection système */
+@media (prefers-color-scheme: dark) {
+    /* Section d'accueil */
+    .home-section {
+        background-color: #333333; /* Fond sombre */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre plus marquée */
+    }
+
+    .section-title {
+        color: #f0f0f0; /* Texte clair */
+    }
+
+    .section-description {
+        color: #ccc; /* Texte clair mais moins éclatant */
+    }
+
+    /* Citation */
+    .citation {
+        background-color: #444444; /* Fond sombre pour la citation */
+        color: #aaa; /* Texte clair */
+        border-left: 5px solid #0a4051;
+    }
+
+    .citation .auteur {
+        color: #f0f0f0; /* Texte clair pour l'auteur */
+    }
+
+    /* Compétences */
+    .text-center {
+        color: #f0f0f0; /* Texte clair pour le titre des compétences */
+    }
+
+    .skill-bar span {
+        color: #f0f0f0; /* Texte clair pour les titres de compétences */
+    }
+
+    .progress {
+        background-color: #555555; /* Fond plus sombre pour la barre */
+    }
+
+    .progress-bar {
+        background: linear-gradient(90deg, #798a90 0%, #687376 100%);
+        color: #fff;
+    }
+
+    /* Mode sombre pour petits écrans */
+    @media (max-width: 768px) {
+        .home-section {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre marquée sur petits écrans */
+        }
+
+        .section-title {
+            font-size: 24px;
+        }
+
+        .section-description {
+            font-size: 16px;
+        }
+
+        .citation {
+            font-size: 14px;
+        }
+
+        .skill-bar span {
+            font-size: 14px;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
+        .progress-bar {
+            font-size: 12px;
+        }
+    }
+}

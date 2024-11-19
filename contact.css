@@ -74,3 +74,60 @@
 .submit-button:focus {
     outline: none;
 }
+
+
+/* Mode sombre (Dark Mode) pour la section Contact */
+@media (prefers-color-scheme: dark) {
+    /* Section de contact */
+    .contact-section {
+        background-color: #333333; /* Fond sombre */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre plus marquée */
+    }
+
+    /* Formulaire de contact */
+    .contact-form {
+        background-color: #444444; /* Fond sombre pour le formulaire */
+        color: #f0f0f0; /* Texte clair */
+        border-radius: 8px;
+        padding: 30px;
+    }
+
+    .contact-form label {
+        color: #f0f0f0; /* Texte clair pour les labels */
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+        background-color: #555555; /* Fond sombre pour les champs de saisie */
+        border: 1px solid #777777; /* Bordure claire */
+        color: #f0f0f0; /* Texte clair dans les champs */
+    }
+
+    .contact-form input:focus, 
+    .contact-form textarea:focus {
+        border-color: #466a78; /* Couleur de la bordure au focus */
+    }
+
+    .contact-form .form-button {
+        text-align: center;
+    }
+
+    .submit-button {
+        background-color: #0a4051; /* Couleur principale */
+        color: #ffffff;
+        font-size: 1.2rem;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+        background-color: #466a78; /* Couleur secondaire au survol */
+    }
+
+    .submit-button:focus {
+        outline: none;
+    }
+}

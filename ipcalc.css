@@ -39,7 +39,7 @@ form input {
 form button {
     margin-top: 20px;
     padding: 12px 20px;
-    background-color: #466a78;
+    background-color: #0a4051;
     color: white;
     font-size: 1.1rem;
     border: none;
@@ -49,7 +49,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #0a4051;
+    background-color: #466a78;
 }
 
 /* Résultat centré dans son conteneur */
@@ -74,5 +74,54 @@ form button:hover {
 
     .result {
         width: 90%;
+    }
+}
+
+
+
+/* Mode sombre (Dark Mode) pour la section Calculatrice IP */
+@media (prefers-color-scheme: dark) {
+    /* Section Calculatrice IP */
+    .ipcalc-section {
+        background-color: #333333; /* Fond sombre */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre plus marquée */
+    }
+
+    /* Formulaire */
+    form {
+        background-color: #444444; /* Fond sombre pour le formulaire */
+        color: #f0f0f0; /* Texte clair */
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    form label {
+        color: #f0f0f0; /* Texte clair pour les labels */
+    }
+
+    form input {
+        background-color: #555555; /* Fond sombre pour les champs de saisie */
+        border: 2px solid #777777; /* Bordure claire */
+        color: #f0f0f0; /* Texte clair dans les champs */
+    }
+
+    form input:focus {
+        border-color: #466a78; /* Couleur de la bordure au focus */
+    }
+
+    form button {
+        background-color: #0a4051; /* Couleur secondaire */
+        color: white;
+    }
+
+    form button:hover {
+        background-color: #466a78; /* Couleur primaire au survol */
+    }
+
+    /* Résultat */
+    .result {
+        background-color: #444444; /* Fond sombre pour le résultat */
+        border: 2px solid #777777; /* Bordure claire */
+        color: #f0f0f0; /* Texte clair */
     }
 }

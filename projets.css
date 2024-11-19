@@ -528,3 +528,98 @@ footer.site-footer {
         font-size: 1.8rem; /* Réduire encore la taille du bouton de fermeture */
     }
 }
+
+
+
+
+/* Mode sombre (Dark Mode) pour la section des projets */
+@media (prefers-color-scheme: dark) {
+    /* Container des projets */
+    .projects-section {
+        background-color: #333333; /* Fond sombre */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre plus marquée */
+    }
+
+
+    .filter-btn {
+        background-color: #555555; /* Boutons de filtre avec fond sombre */
+        color: white;
+        border: none;
+    }
+
+    .filter-btn:hover {
+        background-color: #666666; /* Changement de couleur au survol */
+    }
+
+    .filter-btn.active {
+        background-color: #777777; /* Bouton actif plus clair */
+    }
+
+
+    /* Contenu d'un projet */
+    .project-item {
+        background-color: #444444; /* Fond sombre pour chaque projet */
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 600px;
+        font-family: Arial, sans-serif;
+    }
+
+    .project-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* Ombre plus marquée au survol */
+    }
+
+    /* Titre du projet */
+    .project-title {
+        color: #f0f0f0; /* Texte clair pour le titre du projet */
+    }
+
+    /* Catégorie du projet */
+    .category-tag_JV,
+    .category-tag_SIM,
+    .category-tag_RES,
+    .category-tag_PT,
+    .category-tag_HR,
+    .category-tag_W,
+    .category-tag_APP,
+    .category-tag_BD {
+        background-color: #555555; /* Fond sombre pour les tags */
+        color: white;
+    }
+
+    /* Description du projet */
+    .project-description {
+        color: #f0f0f0; /* Texte clair pour la description */
+    }
+
+    /* Bouton Voir le projet */
+    .project_btn {
+        background-color: #555555; /* Fond sombre pour le bouton */
+        color: white;
+    }
+
+    .project_btn:hover {
+        background-color: #666666; /* Changement au survol */
+    }
+
+    /* Modal */
+    .project-modal {
+        background-color: rgba(0, 0, 0, 0.75); /* Ombre sombre pour le modal */
+    }
+
+    .project-modal-content {
+        background-color: #444444; /* Fond sombre pour le contenu du modal */
+        color: #f0f0f0; /* Texte clair dans le modal */
+    }
+
+    .project-close-btn {
+        color: #f0f0f0; /* Texte clair pour le bouton de fermeture */
+    }
+
+    .project-close-btn:hover {
+        color: #ff4040; /* Changement de couleur au survol du bouton de fermeture */
+    }
+}
