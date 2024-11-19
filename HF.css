@@ -296,21 +296,22 @@ body {
     }
 
     .button-container {
-        flex-direction: column;
-        align-items: center;
+        margin-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .linkedIn_btn,
     .github_btn {
-        width: 35px;
-        height: 35px;
         padding: 8px;
+        width: 40px;
+        height: 40px;
     }
 
     .linkedIn_btn img,
     .github_btn img {
-        width: 22px;
-        height: 22px;
+        width: 40px;
+        height: 40px;
     }
 
     .darkmode_btn {
