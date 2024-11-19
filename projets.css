@@ -537,7 +537,6 @@ footer.site-footer {
     /* Container des projets */
     .projects-section {
         background-color: #333333; /* Fond sombre */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre plus marquée */
     }
 
 
