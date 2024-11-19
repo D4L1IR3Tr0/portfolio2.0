@@ -85,3 +85,112 @@
     transition: width 0.4s ease;
 }
 
+
+
+/* Section d'accueil pour les petits écrans */
+@media (max-width: 768px) {
+
+    .home-section {
+        padding: 40px 15px; /* Réduire le padding sur les petits écrans */
+        margin-top: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+        font-size: 24px; /* Réduire la taille du titre */
+        margin-bottom: 15px;
+    }
+
+    .section-description {
+        font-size: 16px; /* Réduire la taille de la description */
+        margin: 10px 0;
+    }
+
+    .citation {
+        width: 90%; /* Ajuster la largeur de la citation pour les petits écrans */
+        padding: 12px;
+        font-size: 14px; /* Réduire la taille de la citation */
+        margin: 20px auto; /* Centrer horizontalement */
+    }
+
+    .citation .auteur {
+        font-size: 14px; /* Réduire la taille de l'auteur */
+        margin-top: 8px;
+        text-align: right;
+    }
+
+    /* Compétences */
+    .text-center {
+        font-size: 20px; /* Réduire la taille du titre des compétences */
+        margin-bottom: 10px;
+    }
+
+    .skill-bar {
+        flex-direction: column; /* Garder les éléments empilés en colonne */
+        align-items: flex-start;
+        width: 100%; /* Prendre toute la largeur disponible */
+    }
+
+    .skill-bar span {
+        font-size: 14px; /* Réduire la taille du titre des compétences */
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    .progress {
+        height: 20px; /* Réduire la hauteur des barres de progression */
+    }
+
+    .progress-bar {
+        height: 100%;
+        line-height: 20px; /* Centrer verticalement le texte dans la barre */
+        font-size: 12px; /* Réduire la taille du texte dans la barre */
+    }
+
+}
+
+/* Version encore plus petite pour les très petits écrans (smartphones en portrait) */
+@media (max-width: 480px) {
+
+    .home-section {
+        padding: 30px 10px; /* Réduire encore plus le padding */
+    }
+
+    .section-title {
+        font-size: 20px; /* Réduire la taille du titre */
+    }
+
+    .section-description {
+        font-size: 14px; /* Réduire encore plus la taille de la description */
+    }
+
+    .citation {
+        width: 95%; /* Augmenter la largeur de la citation */
+        padding: 10px;
+        font-size: 12px; /* Réduire encore plus la taille de la citation */
+    }
+
+    .citation .auteur {
+        font-size: 12px; /* Réduire la taille de l'auteur */
+        margin-top: 6px;
+    }
+
+    .text-center {
+        font-size: 18px; /* Réduire encore plus la taille du titre des compétences */
+    }
+
+    .skill-bar span {
+        font-size: 12px; /* Réduire encore plus la taille du titre des compétences */
+    }
+
+    .progress {
+        height: 18px; /* Réduire la hauteur des barres de progression */
+    }
+
+    .progress-bar {
+        line-height: 18px; /* Centrer verticalement le texte dans la barre */
+        font-size: 10px; /* Réduire la taille du texte dans la barre */
+    }
+
+}

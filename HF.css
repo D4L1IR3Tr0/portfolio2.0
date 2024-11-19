@@ -173,23 +173,148 @@ body {
     background-color: #3c5d6a;
 }
 
-/* Responsive */
+/* Style global pour la version mobile */
 @media (max-width: 768px) {
-    .site-footer {
-        flex-direction: column;
+
+    /* En-tête */
+    .site-header {
+        height: auto; /* La hauteur de l'en-tête s'adapte automatiquement */
+        padding: 15px 10px;
         text-align: center;
     }
 
+    .logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .logo img {
+        height: 150px; /* Redimensionner le logo pour qu'il soit plus adapté aux petits écrans */
+    }
+
+    .site-title2 {
+        font-size: 24px; /* Réduire la taille du titre pour les petits écrans */
+        margin-top: -15px;
+    }
+
+    .site-nav {
+        margin-top: 15px;
+    }
+
+    .nav-list {
+        flex-direction: column; /* Organiser les éléments de navigation en colonne */
+        justify-content: flex-start; /* Aligner les éléments en haut */
+    }
+
+    .nav-item {
+        margin: 10px 0; /* Espacement entre les éléments de navigation */
+    }
+
+    .nav-link {
+        font-size: 1rem; /* Réduire la taille des liens pour un meilleur ajustement */
+    }
+
+    .nav-link:hover {
+        color: #466a78;
+    }
+
+    .nav-link.active {
+        color: #6b91a1;
+    }
+
+    /* Footer mobile */
+    .site-footer {
+        padding: 1rem 15px;
+        flex-direction: column; /* Disposition verticale pour le footer */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-text {
+        margin-bottom: 15px;
+    }
+
+    /* Boutons LinkedIn et GitHub */
     .button-container {
-        flex-direction: column; /* Empile les liens LinkedIn et GitHub verticalement */
-        margin-bottom: 10px;
-    }
-
-    .button-container > a {
-        margin-bottom: 10px;
-    }
-
-    .darkmode-container {
         margin-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 15px;
+    }
+
+    .linkedIn_btn,
+    .github_btn {
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .linkedIn_btn img,
+    .github_btn img {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* Bouton mode sombre */
+    .darkmode-container {
+        margin-top: 20px;
+        margin-right: 0;
+    }
+
+    .darkmode_btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+
+    .darkmode_btn img {
+        width: 18px;
+        height: 18px;
+    }
+
+}
+
+/* Version encore plus petite pour les très petits écrans (smartphones en portrait) */
+@media (max-width: 480px) {
+
+    .site-title2 {
+        font-size: 20px; /* Plus petit titre pour les petits écrans */
+    }
+
+    .logo img {
+        height: 120px; /* Plus petit logo pour les petits écrans */
+    }
+
+    .nav-link {
+        font-size: 0.9rem; /* Taille des liens encore plus petite */
+    }
+
+    .footer-text p {
+        font-size: 12px; /* Texte de footer plus petit */
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linkedIn_btn,
+    .github_btn {
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+    }
+
+    .linkedIn_btn img,
+    .github_btn img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .darkmode_btn {
+        font-size: 10px;
     }
 }
