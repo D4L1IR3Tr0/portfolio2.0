@@ -141,7 +141,7 @@ body {
 
 /* Bouton mode sombre */
 .darkmode-container {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: flex-end; /* Colle le bouton Dark Mode à droite */
     flex: 1; /* Utilise l'espace restant */
@@ -243,7 +243,6 @@ body {
         margin-top: 10px;
         margin-left: 0;
         margin-right: 0;
-        gap: 15px;
     }
 
     .linkedIn_btn,
@@ -255,8 +254,8 @@ body {
 
     .linkedIn_btn img,
     .github_btn img {
-        width: 25px;
-        height: 25px;
+        width: 40px;
+        height: 40px;
     }
 
     /* Bouton mode sombre */
