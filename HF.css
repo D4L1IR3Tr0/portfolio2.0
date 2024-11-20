@@ -42,8 +42,14 @@ body {
     text-transform: uppercase;
 }
 
+
+
 .site-nav {
     margin-top: 20px;
+}
+
+.hamburger {
+    display: none; /* Masquer le bouton hamburger par défaut */
 }
 
 .nav-list {
@@ -111,8 +117,8 @@ body {
     display: flex;
     gap: 20px; /* Espacement entre les boutons */
     align-items: center;
-    margin-left: 60px;
-    margin-top: -20px;
+    margin-left: 100px;
+    margin-top: -35px;
 }
 
 .linkedIn_btn,
@@ -120,15 +126,17 @@ body {
     background-color: transparent;
     color: #fff;
     border: none;
-    padding: 5px 10px;
+    width: 35px;
+    height: 35px;
+    padding: 8px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .linkedIn_btn img,
 .github_btn img {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
 }
 
 .linkedIn_btn:hover img {
@@ -142,35 +150,6 @@ body {
 /* Bouton mode sombre */
 .darkmode-container {
     display: none;
-    align-items: center;
-    justify-content: flex-end; /* Colle le bouton Dark Mode à droite */
-    flex: 1; /* Utilise l'espace restant */
-    margin-top: -20px; /* Légèrement remonter le bouton Dark Mode */
-    margin-right: 60px;
-}
-
-.darkmode_btn {
-    background-color: #466a78;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    transition: background-color 0.3s;
-}
-
-.darkmode_btn img {
-    width: 20px;
-    height: 20px;
-}
-
-.darkmode_btn:hover {
-    background-color: #3c5d6a;
 }
 
 /* Style global pour la version mobile */
@@ -202,12 +181,18 @@ body {
 
     .site-nav {
         margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
     }
 
     .nav-list {
         flex-direction: column; /* Organiser les éléments de navigation en colonne */
         justify-content: flex-start; /* Aligner les éléments en haut */
+        display: none; /* Masquer par défaut */
     }
+    
 
     .nav-item {
         margin: 10px 0; /* Espacement entre les éléments de navigation */
@@ -223,6 +208,79 @@ body {
 
     .nav-link.active {
         color: #6b91a1;
+    }
+
+    /* Style du bouton hamburger */
+    .hamburger {
+        display: flex; /* Montrer le bouton hamburger */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 10000; /* Placer au-dessus */
+    }
+
+    .hamburger-box {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 24px;
+    }
+
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 4px;
+        background-color: #ffffff; /* Couleur des barres */
+        border-radius: 4px;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-inner {
+        top: 10px;
+    }
+
+    .hamburger-inner::before {
+        top: -10px;
+    }
+
+    .hamburger-inner::after {
+        top: 10px;
+    }
+
+    /* État actif du bouton hamburger */
+    .hamburger.is-active .hamburger-inner {
+        background-color: transparent;
+    }
+
+    /* Barre supérieure descend vers la barre inférieure */
+    .hamburger.is-active .hamburger-inner::before {
+        transform: translateY(10px); /* Descend au niveau de la barre inférieure */
+    }
+
+    /* Barre inférieure reste en place */
+    .hamburger.is-active .hamburger-inner::after {
+        transform: translateY(-10px); /* Garde la position de la barre inférieure */
+    }
+
+    /* Transition fluide */
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Afficher le menu quand le hamburger est actif */
+    .hamburger.is-active + .nav-list {
+        display: flex; /* Affiche les éléments de navigation */
     }
 
     /* Footer mobile */
@@ -257,23 +315,6 @@ body {
         width: 40px;
         height: 40px;
     }
-
-    /* Bouton mode sombre */
-    .darkmode-container {
-        margin-top: 20px;
-        margin-right: 0;
-    }
-
-    .darkmode_btn {
-        padding: 10px 15px;
-        font-size: 12px;
-    }
-
-    .darkmode_btn img {
-        width: 18px;
-        height: 18px;
-    }
-
 }
 
 /* Version encore plus petite pour les très petits écrans (smartphones en portrait) */
@@ -294,30 +335,8 @@ body {
     .footer-text p {
         font-size: 12px; /* Texte de footer plus petit */
     }
-
-    .button-container {
-        margin-top: 10px;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .linkedIn_btn,
-    .github_btn {
-        padding: 8px;
-        width: 40px;
-        height: 40px;
-    }
-
-    .linkedIn_btn img,
-    .github_btn img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .darkmode_btn {
-        font-size: 10px;
-    }
 }
+
 
 
 
