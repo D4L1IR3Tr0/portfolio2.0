@@ -221,7 +221,6 @@ body {
         background: transparent;
         border: none;
         cursor: pointer;
-        z-index: 10000; /* Placer au-dessus */
     }
 
     .hamburger-box {
